@@ -2,14 +2,13 @@ package com.example.annuairecnam.databases;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.annuairecnam.models.Classe;
 import com.example.annuairecnam.databases.contracts.DataContract;
 import com.example.annuairecnam.databases.helpers.DatabaseHelper;
+import com.example.annuairecnam.models.Classe;
 import com.example.annuairecnam.models.Eleve;
 import com.example.annuairecnam.models.Matiere;
 import com.example.annuairecnam.models.Note;
@@ -20,7 +19,7 @@ import java.util.ArrayList;
 public class DbManager {
 
     private DatabaseHelper dbHelper;
-    private Context context;
+    private final Context context;
     private SQLiteDatabase database;
 
     public DbManager(Context c) {
