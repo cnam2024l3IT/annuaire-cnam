@@ -1,25 +1,21 @@
-package com.example.annuairecnam;
+package com.example.annuairecnam.models;
 
-public class Classes {
-    int id;
-   String intitule;
-   String promotion;
+public class Classe extends DataInfo {
 
-    public Classes() {
-    }
+    private String intitule;
+    private String promotion;
 
-    public Classes(int id, String intitule, String promotion) {
-        this.id = id;
+    public Classe() { }
+
+    public Classe(String intitule, String promotion) {
         this.intitule = intitule;
         this.promotion = promotion;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public Classe(long _id, String intitule, String promotion) {
+        this._id = _id;
+        this.intitule = intitule;
+        this.promotion = promotion;
     }
 
     public String getIntitule() {
@@ -37,4 +33,5 @@ public class Classes {
     public void setPromotion(String promotion) {
         this.promotion = promotion;
     }
+
 }
