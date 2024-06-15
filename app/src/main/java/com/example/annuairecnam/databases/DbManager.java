@@ -37,8 +37,7 @@ public class DbManager {
     }
 
     private  Cursor fetchAll(String tableName, String[] columns) {
-        return database.query(tableName, columns, null, null, null,
-                null, null);
+        return database.query(tableName, columns, null, null, null, null, null);
     }
 
     private Cursor fetchOne(String tableName, String[] columns, long _id) {
@@ -59,12 +58,9 @@ public class DbManager {
                 DataContract.ClasseTable.PROMOTION };
         ArrayList<Classe> classes = new ArrayList<>();
         try (Cursor cursor = fetchAll(DataContract.ClasseTable.TABLE_NAME, columns)) {
-            if (cursor.moveToFirst()) {
-                do {
-                    classes.add(new Classe(cursor.getLong(0), cursor.getString(1),
-                            cursor.getString(2)));
-                } while (cursor.moveToNext());
-            }
+            if (cursor.moveToFirst())
+                do classes.add(new Classe(cursor.getLong(0), cursor.getString(1),
+                        cursor.getString(2))); while (cursor.moveToNext());
         }
         return classes;
     }
@@ -77,12 +73,9 @@ public class DbManager {
     public ArrayList<Classe> getClassesByEleveId(long _id) {
         ArrayList<Classe> classes = new ArrayList<>();
         try (Cursor cursor = fetchSQL(DataContract.SQL_CLASSES_BY_ELEVE_ID, new String[]{Long.toString(_id)})) {
-            if (cursor.moveToFirst()) {
-                do {
-                    classes.add(new Classe(cursor.getLong(0), cursor.getString(1),
-                            cursor.getString(2)));
-                } while (cursor.moveToNext());
-            }
+            if (cursor.moveToFirst())
+                do classes.add(new Classe(cursor.getLong(0), cursor.getString(1),
+                        cursor.getString(2))); while (cursor.moveToNext());
         }
         return classes;
     }
@@ -112,12 +105,9 @@ public class DbManager {
                 DataContract.EleveTable.PRENOM };
         ArrayList<Eleve> eleves = new ArrayList<>();
         try (Cursor cursor = fetchAll(DataContract.EleveTable.TABLE_NAME, columns)) {
-            if (cursor.moveToFirst()) {
-                do {
-                    eleves.add(new Eleve(cursor.getLong(0), cursor.getString(1),
-                            cursor.getString(2)));
-                } while (cursor.moveToNext());
-            }
+            if (cursor.moveToFirst())
+                do eleves.add(new Eleve(cursor.getLong(0), cursor.getString(1),
+                        cursor.getString(2))); while (cursor.moveToNext());
         }
         return eleves;
     }
@@ -130,12 +120,9 @@ public class DbManager {
     public ArrayList<Eleve> getElevesByClasseId(long _id) {
         ArrayList<Eleve> eleves = new ArrayList<>();
         try (Cursor cursor = fetchSQL(DataContract.SQL_ELEVES_BY_CLASSE_ID, new String[]{Long.toString(_id)})) {
-            if (cursor.moveToFirst()) {
-                do {
-                    eleves.add(new Eleve(cursor.getLong(0), cursor.getString(1),
-                            cursor.getString(2)));
-                } while (cursor.moveToNext());
-            }
+            if (cursor.moveToFirst())
+                do eleves.add(new Eleve(cursor.getLong(0), cursor.getString(1),
+                        cursor.getString(2))); while (cursor.moveToNext());
         }
         return eleves;
     }
@@ -166,11 +153,9 @@ public class DbManager {
         String[] columns = new String[] { DataContract.MatiereTable._ID,DataContract.MatiereTable.INTITULE };
         ArrayList<Matiere> matieres = new ArrayList<>();
         try (Cursor cursor = fetchAll(DataContract.MatiereTable.TABLE_NAME, columns)) {
-            if (cursor.moveToFirst()) {
-                do {
-                    matieres.add(new Matiere(cursor.getLong(0), cursor.getString(1)));
-                } while (cursor.moveToNext());
-            }
+            if (cursor.moveToFirst())
+                do matieres.add(new Matiere(cursor.getLong(0), cursor.getString(1)));
+                while (cursor.moveToNext());
         }
         return matieres;
     }
@@ -183,11 +168,9 @@ public class DbManager {
     public ArrayList<Matiere> getMatieresByClasseId(long _id) {
         ArrayList<Matiere> matieres = new ArrayList<>();
         try (Cursor cursor = fetchSQL(DataContract.SQL_MATIERES_BY_CLASSE_ID, new String[]{Long.toString(_id)})) {
-            if (cursor.moveToFirst()) {
-                do {
-                    matieres.add(new Matiere(cursor.getLong(0), cursor.getString(1)));
-                } while (cursor.moveToNext());
-            }
+            if (cursor.moveToFirst())
+                do matieres.add(new Matiere(cursor.getLong(0), cursor.getString(1)));
+                while (cursor.moveToNext());
         }
         return matieres;
     }
@@ -219,12 +202,9 @@ public class DbManager {
         ArrayList<Note> notes = new ArrayList<>();
         try (Cursor cursor = fetchSQL(DataContract.SQL_NOTES_BY_CLASSE_ID_AND_ELEVE_ID,
                 new String[]{Long.toString(classeId),Long.toString(eleveId)})) {
-            if (cursor.moveToFirst()) {
-                do {
-                    notes.add(new Note(cursor.getLong(0), new Matiere(cursor.getLong(1),
-                            cursor.getString(2))));
-                } while (cursor.moveToNext());
-            }
+            if (cursor.moveToFirst())
+                do notes.add(new Note(cursor.getLong(0), new Matiere(cursor.getLong(1),
+                        cursor.getString(2)))); while (cursor.moveToNext());
         }
         return notes;
     }
