@@ -1,6 +1,8 @@
 package com.example.annuairecnam.models;
 
-public abstract class DataInfo {
+import android.os.Parcelable;
+
+public abstract class DataInfo implements Parcelable {
 
     protected long _id;
 

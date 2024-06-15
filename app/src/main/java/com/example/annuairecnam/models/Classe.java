@@ -1,5 +1,10 @@
 package com.example.annuairecnam.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
 public class Classe extends DataInfo {
 
     private String intitule;
@@ -17,6 +22,34 @@ public class Classe extends DataInfo {
         this.intitule = intitule;
         this.promotion = promotion;
     }
+
+    public Classe(Parcel in) {
+        _id = in.readLong();
+        intitule = in.readString();
+        promotion = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeLong(_id);
+        dest.writeString(intitule);
+        dest.writeString(promotion);
+    }
+
+    public static final Parcelable.Creator<Classe> CREATOR = new Parcelable.Creator<Classe>() {
+        public Classe createFromParcel(Parcel in) {
+            return new Classe(in);
+        }
+
+        public Classe[] newArray(int size) {
+            return new Classe[size];
+        }
+    };
 
     public String getIntitule() {
         return intitule;
