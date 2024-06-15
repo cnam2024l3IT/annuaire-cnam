@@ -3,7 +3,6 @@ package com.example.annuairecnam;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -13,7 +12,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.annuairecnam.activities.matieres.MatiereListActivity;
-import com.example.annuairecnam.databases.DbManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,17 +27,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Context c = this;
-        DbManager dbManager = new DbManager(c);
-        dbManager.open();
+//        DbManager dbManager = new DbManager(c);
+//        dbManager.open();
 
 //        dbManager.insertMatiere(new Matiere("Sytèmes d'exploitation", "Système d'exploitation", "Luc Howan"));
 //        dbManager.insertMatiere(new Matiere("Programmation avancée", "Programmation avancée", "Benjeamin De Dardel"));
 //        dbManager.insertMatiere(new Matiere("Réseaux", "Réseaux", "Anne Sophie QQCH"));
 
-        dbManager.getAllMatieres().forEach(m -> Log.d("matiere", "onCreate: " + m.get_id() + " - " + m.getIntitule()));
+//        dbManager.getAllMatieres().forEach(m -> Log.d("matiere", "onCreate: " + m.get_id() + " - " + m.getIntitule()));
+//        dbManager.close();
         Button testBtn = findViewById(R.id.test_btn);
         testBtn.setOnClickListener(v -> startActivity(new Intent(c, MatiereListActivity.class)));
-
     }
 
 }
