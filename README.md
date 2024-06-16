@@ -1,15 +1,14 @@
 # Annuaire-CNAM
 
-**L'annuaire du CNAM** est une application mobile développée par les auditeurs de la licence informatique en HTT dans le cadre du cours NFA025 : Mise en oeuvre programmation de smartphones et tablettes tactiles.
-
 ## Description
 
-L'application **Annuaire CNAM** est conçue pour gérer et afficher les informations des classes, des élèves et des matières au sein du CNAM.
+**L'annuaire du CNAM** est une application mobile développée par les auditeurs de la licence informatique en HTT dans le cadre du cours NFA025 : Mise en oeuvre programmation de smartphones et tablettes tactiles.
 
 ## Outils et versions
 
 ### Versions Utilisées
 
+- **Android Gradle Plugin** : Version 8.5
 - **Base de données** : SQLite, version 1
 - **API Android** : API 24 "Nougat", Android 7.0
 - **Version Java** : Java 21
