@@ -13,6 +13,12 @@
         android:theme="@style/Theme.AnnuaireCnam"
         tools:targetApi="31">
         <activity
+            android:name=".activities.classes.ClasseFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.classes.ClasseListActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.matieres.MatiereFormActivity"
             android:exported="false" />
         <activity
