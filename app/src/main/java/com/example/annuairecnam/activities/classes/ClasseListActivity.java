@@ -2,9 +2,8 @@ package com.example.annuairecnam.activities.classes;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,15 +31,18 @@ public class ClasseListActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Log.d("TEVA classeListActivity", "onCreate: ");
         initContext();
         initDbManager();
         initListCl();
         initAddBtn();
     }
 
-    private void initAddBtn() {
-        Button addBtn = findViewById(R.id.floatingActionButton_addItem);
-        addBtn.setOnClickListener(v -> startActivity(new Intent(context, ClasseFormActivity.class)));
+
+        private void initAddBtn() {
+     //   Button addBtn = findViewById(R.id.floatingActionButton_addItem);
+     //   addBtn.setOnClickListener(v -> startActivity(new Intent(context, ClasseFormActivity.class)));
     }
 
     private void initListCl() {

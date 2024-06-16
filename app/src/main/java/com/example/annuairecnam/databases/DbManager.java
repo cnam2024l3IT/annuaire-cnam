@@ -53,7 +53,7 @@ public class DbManager {
      * Récupération de toutes les classes
      * @return tableau de classes
      */
-    public ArrayList<Classe> getAllClasses() {
+    public  ArrayList<Classe> getAllClasses() {
         String[] columns = new String[] { DataContract.ClasseTable._ID,DataContract.ClasseTable.INTITULE,
                 DataContract.ClasseTable.PROMOTION };
         ArrayList<Classe> classes = new ArrayList<>();

@@ -29,7 +29,7 @@ public class ClasseListAdapter  extends RecyclerView.Adapter<ClasseListAdapter.V
 
         public ViewHolder(View view) {
             super(view);
-            layout = view.findViewById(R.id.Classes_list_item_rl);
+            layout = view.findViewById(R.id.classe_list_item_rl);
             intituleTv = view.findViewById(R.id.mli_intitule_tv);
         }
 
@@ -51,7 +51,7 @@ public class ClasseListAdapter  extends RecyclerView.Adapter<ClasseListAdapter.V
     @Override
     public ClasseListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.Classes_list_item, parent, false);
+                .inflate(R.layout.classe_list_item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -60,7 +60,7 @@ public class ClasseListAdapter  extends RecyclerView.Adapter<ClasseListAdapter.V
         Classe classe = classes.get(position);
         holder.getLayout().setOnClickListener(v -> {
             Intent intent = new Intent(context, ClasseFormActivity.class);
-            intent.putExtra(String.valueOf(R.string.Classes_tag), classe);
+            intent.putExtra(String.valueOf(R.string.classe_tag), classe);
             context.startActivity(intent);
         });
         holder.getIntituleTv().setText(classe.getIntitule());
