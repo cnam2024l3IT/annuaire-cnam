@@ -19,6 +19,9 @@
             android:name=".activities.eleves.ElevesListActivity"
             android:exported="false" />
         <activity
+            android:name=".activities.classes.ClasseDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.classes.ClasseFormActivity"
             android:exported="false" />
         <activity
