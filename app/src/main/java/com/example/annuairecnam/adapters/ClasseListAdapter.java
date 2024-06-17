@@ -77,7 +77,6 @@ public class ClasseListAdapter  extends RecyclerView.Adapter<ClasseListAdapter.V
         // Set the click listener
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, ClasseDetailActivity.class);
-            Log.d("TEVA CLASSE LIST ADAP", "ClasseDetailActivity: " + classe.get_id());
             intent.putExtra("CLASSE_ID", classe.get_id());
             context.startActivity(intent);
         });
