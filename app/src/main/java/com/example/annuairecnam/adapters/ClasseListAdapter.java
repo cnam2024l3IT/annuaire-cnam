@@ -2,6 +2,7 @@ package com.example.annuairecnam.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.annuairecnam.R;
+import com.example.annuairecnam.activities.classes.ClasseDetailActivity;
 import com.example.annuairecnam.activities.classes.ClasseFormActivity;
 import com.example.annuairecnam.models.Classe;
 
@@ -71,6 +73,14 @@ public class ClasseListAdapter  extends RecyclerView.Adapter<ClasseListAdapter.V
         });
         holder.getIntituleTv().setText(classe.getIntitule());
         holder.getPromotionTv().setText(classe.getPromotion());
+
+        // Set the click listener
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, ClasseDetailActivity.class);
+            Log.d("TEVA CLASSE LIST ADAP", "ClasseDetailActivity: " + classe.get_id());
+            intent.putExtra("CLASSE_ID", classe.get_id());
+            context.startActivity(intent);
+        });
     }
 
     @Override
