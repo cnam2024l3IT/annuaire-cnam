@@ -2,6 +2,6 @@
 <resources>
     <dimen name="padding_def">16dp</dimen>
     <dimen name="margin_def">16dp</dimen>
-    <dimen name="textsize_def">20dp</dimen>
-    <dimen name="titlesize_def">28dp</dimen>
+    <dimen name="textsize_def">20sp</dimen>
+    <dimen name="titlesize_def">28sp</dimen>
 </resources>

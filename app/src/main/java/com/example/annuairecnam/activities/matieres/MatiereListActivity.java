@@ -14,8 +14,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.annuairecnam.R;
+import com.example.annuairecnam.activities.classes.ClasseListActivity;
+import com.example.annuairecnam.activities.eleves.EleveListActivity;
 import com.example.annuairecnam.adapters.MatiereListAdapter;
 import com.example.annuairecnam.databases.DbManager;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MatiereListActivity extends AppCompatActivity {
 
@@ -36,15 +39,33 @@ public class MatiereListActivity extends AppCompatActivity {
         initDbManager();
         initListRc();
         initAddBtn();
+        initListMatBtn();
+        initListEleBtn();
+        initListClBtn();
     }
 
     private void initAddBtn() {
-        Button addBtn = findViewById(R.id.add_matiere_btn);
+        FloatingActionButton addBtn = findViewById(R.id.floatingActionButton_addItem);
         addBtn.setOnClickListener(v -> startActivity(new Intent(context, MatiereFormActivity.class)));
     }
 
+    private void initListClBtn() {
+        Button lisBtn = findViewById(R.id.button_classes);
+        lisBtn.setOnClickListener(v -> startActivity(new Intent(context, ClasseListActivity.class)));
+    }
+
+    private void initListMatBtn() {
+        Button lisBtn = findViewById(R.id.button_matieres);
+        lisBtn.setOnClickListener(v -> startActivity(new Intent(context, MatiereListActivity.class)));
+    }
+
+    private void initListEleBtn() {
+        Button lisBtn = findViewById(R.id.button_eleves);
+        lisBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveListActivity.class)));
+    }
+
     private void initListRc() {
-        RecyclerView listRc = findViewById(R.id.matiere_list_rc);
+        RecyclerView listRc = findViewById(R.id.recyclerView_list);
         listRc.setAdapter(new MatiereListAdapter(context, dbManager.getAllMatieres()));
         listRc.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }

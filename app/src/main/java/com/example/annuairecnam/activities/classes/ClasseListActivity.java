@@ -1,6 +1,5 @@
 package com.example.annuairecnam.activities.classes;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -68,7 +67,7 @@ public class ClasseListActivity extends AppCompatActivity {
     }
 
     private void initListCl() {
-        RecyclerView listCl = findViewById(R.id.RecyclerView_list);
+        RecyclerView listCl = findViewById(R.id.recyclerView_list);
         listCl.setAdapter(new ClasseListAdapter(context, dbManager.getAllClasses()));
         listCl.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }
