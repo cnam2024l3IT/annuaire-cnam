@@ -26,11 +26,13 @@ public class ClasseListAdapter  extends RecyclerView.Adapter<ClasseListAdapter.V
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final RelativeLayout layout;
         private final TextView intituleTv;
+        private final TextView promotionTv;
 
         public ViewHolder(View view) {
             super(view);
             layout = view.findViewById(R.id.classe_list_item_rl);
             intituleTv = view.findViewById(R.id.mli_intitule_tv);
+            promotionTv = view.findViewById(R.id.mli_promotion_tv);
         }
 
         public RelativeLayout getLayout() {
@@ -39,6 +41,10 @@ public class ClasseListAdapter  extends RecyclerView.Adapter<ClasseListAdapter.V
 
         public TextView getIntituleTv() {
             return intituleTv;
+        }
+
+        public TextView getPromotionTv() {
+            return promotionTv;
         }
     }
 
@@ -64,6 +70,7 @@ public class ClasseListAdapter  extends RecyclerView.Adapter<ClasseListAdapter.V
             context.startActivity(intent);
         });
         holder.getIntituleTv().setText(classe.getIntitule());
+        holder.getPromotionTv().setText(classe.getPromotion());
     }
 
     @Override

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AnnuaireCnam</string>
     <string name="intitule_txt">Intitulé</string>
+    <string name="promotion_txt">Promotion</string>
     <string name="classe_form_txt">Classeform</string>
     <string name="matiere_form_txt">Matièreform</string>
     <string name="eleve_form_txt">Elèveform</string>
