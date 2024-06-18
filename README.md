@@ -18,7 +18,7 @@
 - **Gradle** : Utilisé pour la gestion des dépendances et la compilation du projet.
 - **Moteur de base de données** :
     - **SQLite** : Pour la gestion de la base de données embarquée.
-    ![Schéma de la base de donnée](images/diagramme.JPG)
+      ![Schéma de la base de donnée](images/diagramme.JPG "Schéma de la base de donnée")
   
 ### Configuration de l'Environnement
 
