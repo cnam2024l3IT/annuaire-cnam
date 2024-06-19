@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.annuairecnam.R;
 import com.example.annuairecnam.models.Eleve;
 
-public class EleveFormActivity  extends AppCompatActivity {
+public class EleveFormActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class EleveFormActivity  extends AppCompatActivity {
 
         TextView eleveFormTv = findViewById(R.id.eleve_form_tv);
         Eleve eleve = new Eleve();
-        eleve.setPrenom("Nouvel Eleve");
+        eleve.setPrenom("Nouvel Elève");
 
         if (getIntent().hasExtra(String.valueOf(R.string.eleve_tag)))
             eleve = getIntent().getParcelableExtra(String.valueOf(R.string.eleve_tag));

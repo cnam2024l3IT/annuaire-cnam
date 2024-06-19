@@ -17,8 +17,7 @@ import com.example.annuairecnam.R;
 import com.example.annuairecnam.adapters.EleveListAdapter;
 import com.example.annuairecnam.databases.DbManager;
 
-public class EleveListActivity  extends AppCompatActivity {
-
+public class EleveListActivity extends AppCompatActivity {
     private Context context;
     private DbManager dbManager;
 

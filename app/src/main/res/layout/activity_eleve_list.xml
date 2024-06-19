@@ -7,23 +7,80 @@
     android:layout_height="match_parent"
     tools:context=".activities.eleves.EleveListActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/eleve_list_rc"
+    <TextView
+        android:id="@+id/textView_title"
         android:layout_width="match_parent"
-        android:layout_height="680dp"
-        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_def"
+        android:text="@string/titre_list"
+        android:textSize="@dimen/titlesize_def"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/add_eleve_btn"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerView_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_def"
+        android:layout_marginBottom="@dimen/margin_def"
+        android:padding="@dimen/padding_def"
+        app:layout_constraintBottom_toTopOf="@+id/button_matieres"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_title"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton_addItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_txt"
+        android:clickable="true"
+        app:backgroundTint="#FFA0A0"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView_title"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <Button
+        android:id="@+id/button_matieres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_def"
+        android:backgroundTint="@color/cnam"
+        android:text="@string/matiere_tag"
+        android:textSize="@dimen/textsize_def"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eleve_list_rc" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_eleves"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_def"
+        android:backgroundTint="@color/cnam"
+        android:text="@string/eleve_tag"
+        android:textSize="@dimen/textsize_def"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_matieres" />
+
+    <Button
+        android:id="@+id/button_classes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_def"
+        android:backgroundTint="@color/cnam"
+        android:text="@string/classe_tag"
+        android:textSize="@dimen/textsize_def"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_matieres"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

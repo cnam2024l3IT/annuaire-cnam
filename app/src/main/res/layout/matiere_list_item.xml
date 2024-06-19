@@ -4,16 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/matiere_list_item_rl"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/padding_def"
+    android:paddingEnd="@dimen/padding_def">
 
     <TextView
         android:id="@+id/mli_intitule_tv"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="0dp"
+        android:paddingTop="@dimen/padding_def"
+        android:paddingBottom="@dimen/padding_def"
         android:text="@string/intitule_txt"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textAlignment="viewStart"
+        android:textSize="@dimen/textsize_def"
+        android:textStyle="bold" />
+
 </RelativeLayout>
