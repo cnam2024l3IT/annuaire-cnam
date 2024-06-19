@@ -28,6 +28,13 @@ public class Eleve extends DataInfo {
         this.email = email;
     }
 
+    public Eleve(String nom, String prenom, String dateNaissance, String email, String telephone) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateNaissance = dateNaissance;
+        this.email = email;
+    }
+
     public Eleve(long _id, String nom, String prenom, String dateNaissance, String email, String telephone) {
         this._id = _id;
         this.nom = nom;

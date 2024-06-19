@@ -8,6 +8,16 @@
     <string name="add_txt">Ajouter</string>
     <string name="classe_tag">classe</string>
     <string name="matiere_tag">matiere</string>
-    <string name="eleve_tag">éleve</string>
+    <string name="eleve_tag">eleve</string>
     <string name="titre_list">Liste:</string>
+    <string name="nom_txt">Nom</string>
+    <string name="prenom_txt">Prénom</string>
+    <string name="date_naissance_txt">Date naissance</string>
+    <string name="email_txt">Email</string>
+    <string name="telephone_txt">Téléphone</string>
+    <string name="valider_txt">Valider</string>
+    <string name="edit_txt">Modifier</string>
+    <string name="matieres_txt">Matières</string>
+    <string name="classes_txt">Classes</string>
+    <string name="eleves_txt">Elèves</string>
 </resources>

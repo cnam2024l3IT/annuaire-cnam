@@ -8,7 +8,7 @@
     tools:context=".activities.classes.ClasseListActivity">
 
     <TextView
-        android:id="@+id/textView_title"
+        android:id="@+id/ml_title_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_def"
@@ -21,66 +21,66 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_list"
+        android:id="@+id/matiere_list_rv"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_def"
         android:layout_marginBottom="@dimen/margin_def"
         android:padding="@dimen/padding_def"
-        app:layout_constraintBottom_toTopOf="@+id/button_matieres"
+        app:layout_constraintBottom_toTopOf="@+id/ml_matiere_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_title"
+        app:layout_constraintTop_toBottomOf="@+id/ml_title_tv"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton_addItem"
+        android:id="@+id/ml_add_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
         app:backgroundTint="#FFA0A0"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_title"
+        app:layout_constraintBottom_toBottomOf="@+id/ml_title_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView_title"
+        app:layout_constraintTop_toTopOf="@+id/ml_title_tv"
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <Button
-        android:id="@+id/button_matieres"
+        android:id="@+id/ml_matiere_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_def"
         android:backgroundTint="@color/cnam"
-        android:text="@string/matiere_tag"
+        android:text="@string/matieres_txt"
         android:textSize="@dimen/textsize_def"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button_eleves"
+        android:id="@+id/ml_eleve_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_def"
         android:backgroundTint="@color/cnam"
-        android:text="@string/eleve_tag"
+        android:text="@string/eleves_txt"
         android:textSize="@dimen/textsize_def"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_matieres" />
+        app:layout_constraintStart_toEndOf="@+id/ml_matiere_btn" />
 
     <Button
-        android:id="@+id/button_classes"
+        android:id="@+id/ml_classe_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_def"
         android:backgroundTint="@color/cnam"
-        android:text="@string/classe_tag"
+        android:text="@string/classes_txt"
         android:textSize="@dimen/textsize_def"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_matieres"
+        app:layout_constraintEnd_toStartOf="@+id/ml_matiere_btn"
         app:layout_constraintStart_toStartOf="parent" />
 
 

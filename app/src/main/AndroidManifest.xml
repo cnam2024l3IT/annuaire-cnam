@@ -13,7 +13,13 @@
         android:theme="@style/Theme.AnnuaireCnam"
         tools:targetApi="31">
         <activity
-            android:name=".activities.eleves.EleveFormActivity"
+            android:name=".activities.notes.NoteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.eleves.EleveEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.eleves.EleveAddActivity"
             android:exported="false" />
         <activity
             android:name=".activities.eleves.EleveListActivity"
