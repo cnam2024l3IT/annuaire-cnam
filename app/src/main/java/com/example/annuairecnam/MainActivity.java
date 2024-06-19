@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         dbManager.getAllEleves().forEach(e -> Log.d("eleve", "onCreate: " + e.get_id() + " - " + e.getNom() + " "
                 + e.getPrenom() + " - " + e.getDateNaissance() + " - " + e.getEmail() + " - " + e.getTelephone()));
 
+//        dbManager.getElevesByClasseId(1).forEach(e -> Log.d("eleve_classe_1", "onCreate: " + e.get_id() + " - " + e.getNom()));
+
         dbManager.close();
     }
 

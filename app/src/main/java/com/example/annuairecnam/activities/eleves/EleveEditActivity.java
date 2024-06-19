@@ -2,6 +2,8 @@ package com.example.annuairecnam.activities.eleves;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,8 @@ import com.example.annuairecnam.databases.DbManager;
 public class EleveEditActivity extends AppCompatActivity {
     private Context context;
     private DbManager dbManager;
+    private EditText nomCtrl, prenomCtrl, dateNaissanceCtrl, emailCtrl, telephoneCtrl;
+    private Button validerBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
