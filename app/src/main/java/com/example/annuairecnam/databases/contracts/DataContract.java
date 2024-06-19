@@ -64,10 +64,10 @@ public class DataContract {
             + ClasseEleveTable.ELEVE_ID + ") REFERENCES " + EleveTable.TABLE_NAME + " (" + EleveTable._ID
             + ") ON UPDATE NO ACTION ON DELETE CASCADE);";
     public static final String SQL_DELETE_CLASSE_ELEVE_TABLE = "DROP TABLE IF EXISTS " + ClasseEleveTable.TABLE_NAME;
-    public static final String SQL_ELEVES_BY_CLASSE_ID = "SELECT " + EleveTable._ID + ", " + EleveTable.NOM + ", "
+    public static final String SQL_ELEVES_BY_CLASSE_ID = "SELECT " + EleveTable.TABLE_NAME + "." + EleveTable._ID + ", " + EleveTable.NOM + ", "
             + EleveTable.PRENOM + " FROM " + ClasseEleveTable.TABLE_NAME + " INNER JOIN "
             + EleveTable.TABLE_NAME + " ON " + ClasseEleveTable.ELEVE_ID + " = "
-            + EleveTable._ID + " WHERE " + ClasseEleveTable.CLASSE_ID + " = ?s";
+            + EleveTable.TABLE_NAME + "." + EleveTable._ID + " WHERE " + ClasseEleveTable.CLASSE_ID + " = ?";
 
     public static class ClasseMatiereTable extends InfoTable {
         public static final String TABLE_NAME = "classes_matieres";
@@ -84,7 +84,7 @@ public class DataContract {
     public static final String SQL_DELETE_CLASSE_MATIERE_TABLE = "DROP TABLE IF EXISTS " + ClasseMatiereTable.TABLE_NAME;
     public static final String SQL_MATIERES_BY_CLASSE_ID = "SELECT " + MatiereTable._ID + ", " + MatiereTable.INTITULE + " FROM "
             + ClasseMatiereTable.TABLE_NAME + " INNER JOIN " + MatiereTable.TABLE_NAME + " ON " + ClasseMatiereTable.MATIERE_ID
-            + " = " + MatiereTable._ID + " WHERE " + ClasseMatiereTable.CLASSE_ID + " = ?s";
+            + " = " + MatiereTable._ID + " WHERE " + ClasseMatiereTable.CLASSE_ID + " = ?";
 
     public static class NoteTable extends InfoTable {
         public static final String TABLE_NAME = "notes";
