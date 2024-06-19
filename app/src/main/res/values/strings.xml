@@ -3,7 +3,7 @@
     <string name="intitule_txt">Intitulé</string>
     <string name="promotion_txt">Promotion</string>
     <string name="classe_form_txt">Classeform</string>
-    <string name="matiere_form_txt">Matièreform</string>
+    <string name="matiere_form_txt">Nouvelle une Matière</string>
     <string name="eleve_form_txt">Elèveform</string>
     <string name="add_txt">Ajouter</string>
     <string name="classe_tag">classe</string>
