@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.annuairecnam.R;
-import com.example.annuairecnam.activities.matieres.MatiereFormActivity;
+import com.example.annuairecnam.activities.matieres.MatiereDetailActivity;
 import com.example.annuairecnam.models.Matiere;
 
 import java.util.ArrayList;
@@ -58,8 +58,8 @@ public class MatiereListAdapter extends RecyclerView.Adapter<MatiereListAdapter.
     public void onBindViewHolder(@NonNull MatiereListAdapter.ViewHolder holder, int position) {
         Matiere matiere = matieres.get(position);
         holder.getLayout().setOnClickListener(v -> {
-            Intent intent = new Intent(context, MatiereFormActivity.class);
-            intent.putExtra(String.valueOf(R.string.matiere_tag), matiere);
+            Intent intent = new Intent(context, MatiereDetailActivity.class);
+            intent.putExtra("matiere_id", matiere.get_id());
             context.startActivity(intent);
         });
         holder.getIntituleTv().setText(matiere.getIntitule());

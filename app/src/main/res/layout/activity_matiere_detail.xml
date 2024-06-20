@@ -2,33 +2,21 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.matieres.MatiereFormActivity">
-
-    <TextView
-        android:id="@+id/matiere_form_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/matiere_form_txt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.061" />
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <EditText
         android:id="@+id/intitule_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="132dp"
         android:hint="Intitulé"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/matiere_form_tv" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/description_et"
@@ -53,17 +41,32 @@
         app:layout_constraintTop_toBottomOf="@+id/description_et" />
 
     <Button
-        android:id="@+id/create_btn"
+        android:id="@+id/update_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="50dp"
         android:background="@color/cnam"
-        android:text="Création"
+        android:text="Mettre à jour"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/professeur_et" />
+
+    <Button
+        android:id="@+id/delete_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@color/cnam"
+        android:text="Supprimer"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_btn"
+        app:layout_constraintVertical_bias="0.115" />
 
     <Button
         android:id="@+id/return_btn"
@@ -76,6 +79,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/delete_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
