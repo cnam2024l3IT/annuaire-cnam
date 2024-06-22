@@ -25,7 +25,7 @@
         android:id="@+id/intitule_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60sp"
+        android:layout_marginTop="68dp"
         android:width="@dimen/edittextsize_form"
         android:hint="Intitulé"
         app:layout_constraintEnd_toEndOf="parent"
