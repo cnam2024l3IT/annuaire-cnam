@@ -22,12 +22,6 @@
             android:exported="false" />
 
         <activity
-            android:name=".activities.eleves.EleveFormActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.eleves.EleveListActivity"
-            android:exported="false" />
-        <activity
             android:name=".activities.classes.ClasseDetailActivity"
             android:exported="false" />
         <activity

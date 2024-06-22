@@ -24,12 +24,20 @@ public class EleveListAdapter extends RecyclerView.Adapter<EleveListAdapter.View
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final RelativeLayout layout;
-        private final TextView nomTv;
+        private final TextView intituleTv;
 
         public ViewHolder(View view) {
             super(view);
             layout = view.findViewById(R.id.eleve_list_item_rl);
-            nomTv = view.findViewById(R.id.eleve_form_tv);
+            intituleTv = view.findViewById(R.id.mli_intitule_tv);
+
+        }
+        public RelativeLayout getLayout() {
+            return layout;
+        }
+
+        public TextView getIntituleTv() {
+            return intituleTv;
         }
     }
 
@@ -53,7 +61,7 @@ public class EleveListAdapter extends RecyclerView.Adapter<EleveListAdapter.View
             intent.putExtra(String.valueOf(R.string.eleve_tag), eleve);
             context.startActivity(intent);
         });
-        holder.nomTv.setText(eleve.getNom());
+        holder.getIntituleTv().setText(eleve.getNom());
     }
 
     @Override

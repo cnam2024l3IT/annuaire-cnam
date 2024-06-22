@@ -39,13 +39,13 @@ public class EleveListActivity extends AppCompatActivity {
     }
 
     private void initListRc() {
-        RecyclerView listRc = findViewById(R.id.eleve_list_rc);
+        RecyclerView listRc = findViewById(R.id.RecyclerView_list);
         listRc.setAdapter(new EleveListAdapter(context, dbManager.getAllEleves()));
         listRc.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }
 
     private void initAddBtn() {
-        Button addBtn = findViewById(R.id.add_eleve_btn);
+        Button addBtn = findViewById(R.id.floatingActionButton_addItem);
         addBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveFormActivity.class)));
     }
 
