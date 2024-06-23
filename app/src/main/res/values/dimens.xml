@@ -4,10 +4,4 @@
     <dimen name="margin_def">16dp</dimen>
     <dimen name="textsize_def">20sp</dimen>
     <dimen name="titlesize_def">28sp</dimen>
-    <dimen name="edittextsize_form">500px</dimen>
-    <dimen name="textheight_form">300px</dimen>
-    <dimen name="textwidth_form">150px</dimen>
-    <dimen name="textview_margin_form">30px</dimen>
-    <dimen name="textview_margintop_form">44sp</dimen>
-    <dimen name="buttonsize_form">150sp</dimen>
 </resources>
