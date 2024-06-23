@@ -2,7 +2,6 @@ package com.example.annuairecnam.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.annuairecnam.R;
 import com.example.annuairecnam.activities.classes.ClasseDetailActivity;
-import com.example.annuairecnam.activities.classes.ClasseFormActivity;
 import com.example.annuairecnam.models.Classe;
 
 import java.util.ArrayList;
 
-
-public class ClasseListAdapter  extends RecyclerView.Adapter<ClasseListAdapter.ViewHolder> {
+public class ClasseListAdapter extends RecyclerView.Adapter<ClasseListAdapter.ViewHolder> {
 
     private final Context context;
     private final ArrayList<Classe> classes;
@@ -66,15 +63,10 @@ public class ClasseListAdapter  extends RecyclerView.Adapter<ClasseListAdapter.V
     @Override
     public void onBindViewHolder(@NonNull ClasseListAdapter.ViewHolder holder, int position) {
         Classe classe = classes.get(position);
-        holder.getLayout().setOnClickListener(v -> {
-            Intent intent = new Intent(context, ClasseFormActivity.class);
-            intent.putExtra(String.valueOf(R.string.classe_tag), classe);
-            context.startActivity(intent);
-        });
         holder.getIntituleTv().setText(classe.getIntitule());
         holder.getPromotionTv().setText(classe.getPromotion());
 
-        // Set the click listener
+        // Set click listener for item
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, ClasseDetailActivity.class);
             intent.putExtra("CLASSE_ID", classe.get_id());
@@ -87,4 +79,3 @@ public class ClasseListAdapter  extends RecyclerView.Adapter<ClasseListAdapter.V
         return classes.size();
     }
 }
-
