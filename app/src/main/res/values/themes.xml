@@ -6,4 +6,5 @@
     </style>
 
     <style name="Theme.AnnuaireCnam" parent="Base.Theme.AnnuaireCnam" />
+     <item name="android:statusBarColor">@color/cnam</item>
 </resources>
