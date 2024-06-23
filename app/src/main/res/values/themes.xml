@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.AnnuaireCnam" parent="Base.Theme.AnnuaireCnam" />
+    <style name="Theme.AnnuaireCnam" parent="Base.Theme.AnnuaireCnam">
      <item name="android:statusBarColor">@color/cnam</item>
     </style>
 
