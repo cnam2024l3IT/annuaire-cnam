@@ -14,8 +14,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.annuairecnam.R;
+import com.example.annuairecnam.activities.classes.ClasseListActivity;
+import com.example.annuairecnam.activities.matieres.MatiereListActivity;
 import com.example.annuairecnam.adapters.EleveListAdapter;
 import com.example.annuairecnam.databases.DbManager;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class EleveListActivity extends AppCompatActivity {
     private Context context;
@@ -32,21 +35,37 @@ public class EleveListActivity extends AppCompatActivity {
             return insets;
         });
 
-        initListRc();
-        initAddBtn();
         initContext();
         initDbManager();
+        initListRc();
+        initAddBtn();
+        initListMatBtn();
+        initListEleBtn();
+        initListClBtn();
     }
 
+    private void initAddBtn() {
+        FloatingActionButton addBtn = findViewById(R.id.floatingActionButton_addItem);
+        addBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveFormActivity.class)));
+    }
+    private void initListClBtn() {
+        Button lisBtn = findViewById(R.id.button_classes);
+        lisBtn.setOnClickListener(v -> startActivity(new Intent(context, ClasseListActivity.class)));
+    }
+
+    private void initListMatBtn() {
+        Button lisBtn = findViewById(R.id.button_matieres);
+        lisBtn.setOnClickListener(v -> startActivity(new Intent(context, MatiereListActivity.class)));
+    }
+
+    private void initListEleBtn() {
+        Button lisBtn = findViewById(R.id.button_eleves);
+        lisBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveListActivity.class)));
+    }
     private void initListRc() {
         RecyclerView listRc = findViewById(R.id.RecyclerView_list);
         listRc.setAdapter(new EleveListAdapter(context, dbManager.getAllEleves()));
         listRc.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
-    }
-
-    private void initAddBtn() {
-        Button addBtn = findViewById(R.id.floatingActionButton_addItem);
-        addBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveFormActivity.class)));
     }
 
     private void initDbManager() {
@@ -62,5 +81,4 @@ public class EleveListActivity extends AppCompatActivity {
         dbManager.close();
         super.onDestroy();
     }
-
 }
