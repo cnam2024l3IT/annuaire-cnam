@@ -34,12 +34,12 @@
         app:layout_constraintTop_toBottomOf="@+id/classe_form_tv" />
 
     <EditText
-        android:id="@+id/description_et"
+        android:id="@+id/promotion_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/textview_margintop_form"
         android:width="@dimen/edittextsize_form"
-        android:hint="Description"
+        android:hint="Promotion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.751"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +57,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/return_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/promotion_tv" />
 
     <Button
         android:id="@+id/return_btn"
@@ -71,7 +71,7 @@
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_et"
+        app:layout_constraintTop_toBottomOf="@+id/promotion_et"
         app:layout_constraintVertical_bias="0.483" />
 
     <TextView
@@ -89,15 +89,15 @@
         app:layout_constraintTop_toBottomOf="@+id/classe_form_tv" />
 
     <TextView
-        android:id="@+id/description_tv"
+        android:id="@+id/promotion_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/textview_margin_form"
         android:layout_marginTop="64dp"
         android:layout_marginRight="@dimen/textview_margin_form"
-        android:text="Description :"
+        android:text="Promotion :"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/description_et"
+        app:layout_constraintEnd_toStartOf="@+id/promotion_et"
         app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/intitule_tv" />
