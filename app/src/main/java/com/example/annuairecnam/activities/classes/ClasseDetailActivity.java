@@ -69,9 +69,15 @@ public class ClasseDetailActivity extends AppCompatActivity {
             classe.setIntitule(intituleEt.getText().toString());
             classe.setPromotion(promotionEt.getText().toString());
 
-            dbManager.updateClasse(classeId, classe);
-            Toast.makeText(ClasseDetailActivity.this, "Classe mise à jour", Toast.LENGTH_SHORT).show();
-            navigateToList();
+            new AlertDialog.Builder(context)
+                    .setTitle("Confirmation la mise à jour")
+                    .setMessage("Êtes-vous sûr de vouloir modifier cette classe ?")
+                    .setPositiveButton(android.R.string.yes, (dialog, which) -> {
+                        dbManager.updateClasse(classeId, classe);
+                        Toast.makeText(ClasseDetailActivity.this, "Classe mise à jour", Toast.LENGTH_SHORT).show();
+                    })
+                    .setNegativeButton(android.R.string.no, null)
+                    .show();
         });
 
         deleteClBtn.setOnClickListener(v -> {

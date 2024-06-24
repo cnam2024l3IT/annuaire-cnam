@@ -65,7 +65,6 @@ public class EleveListActivity2 extends AppCompatActivity {
                                 dbManager.insertClasseEleve(classeId, eleveId);
                             }
                             Toast.makeText(EleveListActivity2.this, "Élèves ajoutés", Toast.LENGTH_SHORT).show();
-                            // Retour à la ClasseDetail (si nécessaire)
                         })
                         .setNegativeButton(android.R.string.no, null)
                         .show();
@@ -96,4 +95,5 @@ public class EleveListActivity2 extends AppCompatActivity {
         dbManager.close();
         super.onDestroy();
     }
+
 }
