@@ -5,15 +5,103 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.classes.ClasseFormActivity">
+    tools:context=".activities.matieres.MatiereFormActivity">
 
     <TextView
-    android:id="@+id/classe_form_tv"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/classe_form_txt"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"/>
+        android:id="@+id/classe_form_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:text="@string/classe_form_txt"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061" />
+
+    <EditText
+        android:id="@+id/intitule_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:width="@dimen/edittextsize_form"
+        android:hint="Intitulé"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.751"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/classe_form_tv" />
+
+    <EditText
+        android:id="@+id/description_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/textview_margintop_form"
+        android:width="@dimen/edittextsize_form"
+        android:hint="Description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.751"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intitule_et" />
+
+    <Button
+        android:id="@+id/create_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="129dp"
+        android:width="@dimen/buttonsize_form"
+        android:backgroundTint="@color/cnam"
+        android:text="Création"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/return_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_tv" />
+
+    <Button
+        android:id="@+id/return_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="44dp"
+        android:width="@dimen/buttonsize_form"
+        android:backgroundTint="@color/cnam"
+        android:text="Retour"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_et"
+        app:layout_constraintVertical_bias="0.483" />
+
+    <TextView
+        android:id="@+id/intitule_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/textview_margin_form"
+        android:layout_marginTop="81dp"
+        android:layout_marginRight="@dimen/textview_margin_form"
+        android:text="Intitulé :"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/intitule_et"
+        app:layout_constraintHorizontal_bias="0.281"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/classe_form_tv" />
+
+    <TextView
+        android:id="@+id/description_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/textview_margin_form"
+        android:layout_marginTop="64dp"
+        android:layout_marginRight="@dimen/textview_margin_form"
+        android:text="Description :"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/description_et"
+        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intitule_tv" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

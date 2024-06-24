@@ -2,20 +2,118 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:context=".activities.classes.ClasseListActivity">
+    tools:context=".activities.classes.ClasseDetailActivity">
 
+    <!-- Titre de la liste -->
     <TextView
-        android:id="@+id/classe_id"
+        android:id="@+id/textView_title"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:padding="8dp"
-        android:text="ID affiche"
-        android:textSize="18sp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_def"
+        android:text="@string/classe_detail_txt"
+        android:textSize="@dimen/titlesize_def"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Champ de texte pour l'intitulé de la classe (modifiable) -->
+    <EditText
+        android:id="@+id/intitule_et"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_def"
+        android:layout_marginStart="@dimen/padding_def"
+        android:layout_marginEnd="@dimen/padding_def"
+        android:hint="@string/intitule_txt"
+        android:textSize="@dimen/textsize_def"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_title" />
+
+    <!-- Champ de texte pour la description de la classe (modifiable) -->
+    <EditText
+        android:id="@+id/description_et"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_def"
+        android:layout_marginTop="@dimen/margin_def"
+        android:layout_marginEnd="@dimen/padding_def"
+        android:hint="Description"
+        android:textSize="@dimen/textsize_def"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intitule_et" />
+
+    <!-- Bouton pour sauvegarder les modifications -->
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_def"
+        android:layout_marginTop="@dimen/margin_def"
+        android:backgroundTint="@color/cnam"
+        android:text="Maj"
+        android:textSize="@dimen/textsize_def"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_et" />
+
+    <!-- Bouton pour ajouter un élève -->
+    <Button
+        android:id="@+id/update_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="@dimen/margin_def"
+        android:backgroundTint="@color/cnam"
+        android:text="Ajouter élève"
+        android:textSize="@dimen/textsize_def"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_et" />
+
+    <!-- Liste des élèves -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_eleves"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_def"
+        android:layout_marginBottom="@dimen/margin_def"
+        android:padding="@dimen/padding_def"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView_matieres"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_btn" />
+
+    <!-- Liste des matières -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_matieres"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_def"
+        android:layout_marginBottom="@dimen/margin_def"
+        android:padding="@dimen/padding_def"
+        app:layout_constraintBottom_toTopOf="@+id/button_classes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView_eleves" />
+
+    <!-- Bouton pour retourner à la liste des classes -->
+    <Button
+        android:id="@+id/button_classes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_def"
+        android:backgroundTint="@color/cnam"
+        android:text="@string/classe_tag"
+        android:textSize="@dimen/textsize_def"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
