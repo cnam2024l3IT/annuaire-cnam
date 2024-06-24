@@ -2,7 +2,6 @@ package com.example.annuairecnam.activities.eleves;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -42,7 +41,6 @@ public class EleveListActivity2 extends AppCompatActivity {
 
         // Récupération du classeId depuis l'intent
         classeId = getIntent().getLongExtra("CLASSE_ID", -1);
-        Log.d("Teva classeId", String.valueOf(classeId));
         initListRc();
 
 

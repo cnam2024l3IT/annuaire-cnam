@@ -2,7 +2,6 @@ package com.example.annuairecnam;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        Log.d("Teva classeId", "test");
         startActivity(new Intent(MainActivity.this, ClasseListActivity.class));
     }
 
