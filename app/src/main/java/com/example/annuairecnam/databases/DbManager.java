@@ -404,4 +404,19 @@ public class DbManager {
         delete(DataContract.NoteTable.TABLE_NAME, _id);
     }
 
+    public void deleteClasseMatiereLiaison(long classeId, long matiereId) {
+        String whereClause = DataContract.ClasseMatiereTable.CLASSE_ID + " = ? AND " +
+                DataContract.ClasseMatiereTable.MATIERE_ID + " = ?";
+        String[] whereArgs = { String.valueOf(classeId), String.valueOf(matiereId) };
+        dbHelper.getWritableDatabase().delete(DataContract.ClasseMatiereTable.TABLE_NAME, whereClause, whereArgs);
+    }
+
+    public void deleteClasseEleveLiaison(long classeId, long eleveId) {
+        String whereClause = DataContract.ClasseEleveTable.CLASSE_ID + " = ? AND " +
+                DataContract.ClasseEleveTable.ELEVE_ID + " = ?";
+        String[] whereArgs = { String.valueOf(classeId), String.valueOf(eleveId) };
+        dbHelper.getWritableDatabase().delete(DataContract.ClasseEleveTable.TABLE_NAME, whereClause, whereArgs);
+    }
+
+
 }
