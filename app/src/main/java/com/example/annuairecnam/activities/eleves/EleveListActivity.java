@@ -46,24 +46,24 @@ public class EleveListActivity extends AppCompatActivity {
 
     private void initAddBtn() {
         FloatingActionButton addBtn = findViewById(R.id.floatingActionButton_addItem);
-        addBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveFormActivity.class)));
+        addBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveAddActivity.class)));
     }
     private void initListClBtn() {
-        Button lisBtn = findViewById(R.id.button_classes);
+        Button lisBtn = findViewById(R.id.ml_classe_btn);
         lisBtn.setOnClickListener(v -> startActivity(new Intent(context, ClasseListActivity.class)));
     }
 
     private void initListMatBtn() {
-        Button lisBtn = findViewById(R.id.button_matieres);
+        Button lisBtn = findViewById(R.id.ml_matiere_btn);
         lisBtn.setOnClickListener(v -> startActivity(new Intent(context, MatiereListActivity.class)));
     }
 
     private void initListEleBtn() {
-        Button lisBtn = findViewById(R.id.button_eleves);
+        Button lisBtn = findViewById(R.id.ml_eleve_btn);
         lisBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveListActivity.class)));
     }
     private void initListRc() {
-        RecyclerView listRc = findViewById(R.id.RecyclerView_list);
+        RecyclerView listRc = findViewById(R.id.eleve_list_rv);
         listRc.setAdapter(new EleveListAdapter(context, dbManager.getAllEleves()));
         listRc.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }

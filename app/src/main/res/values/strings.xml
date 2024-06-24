@@ -20,4 +20,5 @@
     <string name="matieres_txt">Matières</string>
     <string name="classes_txt">Classes</string>
     <string name="eleves_txt">Elèves</string>
+    <string name="matiere_detail_txt">Détail Matière</string>
 </resources>

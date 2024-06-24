@@ -57,7 +57,7 @@ public class MatiereListActivity extends AppCompatActivity {
     }
 
     private void initListRv() {
-        RecyclerView listRv = findViewById(R.id.matiere_list_rv);
+        RecyclerView listRv = findViewById(R.id.eleve_list_rv);
         listRv.setAdapter(new MatiereListAdapter(context, dbManager.getAllMatieres()));
         listRv.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }
