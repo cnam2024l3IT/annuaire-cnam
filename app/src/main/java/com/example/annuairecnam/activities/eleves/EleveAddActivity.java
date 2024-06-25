@@ -44,16 +44,7 @@ public class EleveAddActivity extends AppCompatActivity {
 
         dbManager = new DbManager(context).open();
 
-        validerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Eleve eleve = new Eleve(nomCtrl.getText().toString(), prenomCtrl.getText().toString(),
-                        dateNaissanceCtrl.getText().toString(), emailCtrl.getText().toString(), telephoneCtrl.getText().toString());
-                dbManager.insertEleve(eleve);
-
-                startActivity(new Intent(context, EleveListActivity.class));
-            }
-        });
+        validerBtn.setOnClickListener(this::saveEleve);
 
     }
 
@@ -61,5 +52,12 @@ public class EleveAddActivity extends AppCompatActivity {
     protected void onDestroy() {
         dbManager.close();
         super.onDestroy();
+    }
+
+    private void saveEleve(View v) {
+        Eleve eleve = new Eleve(nomCtrl.getText().toString(), prenomCtrl.getText().toString(),
+                dateNaissanceCtrl.getText().toString(), emailCtrl.getText().toString(), telephoneCtrl.getText().toString());
+        dbManager.insertEleve(eleve);
+        startActivity(new Intent(context, EleveListActivity.class));
     }
 }

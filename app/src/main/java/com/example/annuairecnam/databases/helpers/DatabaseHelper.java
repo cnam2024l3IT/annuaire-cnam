@@ -10,7 +10,6 @@ import com.example.annuairecnam.databases.contracts.DataContract;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "annuaire_cnam.db";
-
     private static final int DB_VERSION = 1;
 
     public DatabaseHelper(Context context) {

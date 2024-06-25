@@ -47,21 +47,6 @@ public class MatiereListActivity extends AppCompatActivity {
         addBtn.setOnClickListener(v -> startActivity(new Intent(context, MatiereFormActivity.class)));
     }
 
-    private void initListClBtn() {
-        Button lisBtn = findViewById(R.id.ml_classe_btn);
-        lisBtn.setOnClickListener(v -> startActivity(new Intent(context, ClasseListActivity.class)));
-    }
-
-    private void initListMatBtn() {
-        Button lisBtn = findViewById(R.id.ml_matiere_btn);
-        lisBtn.setOnClickListener(v -> startActivity(new Intent(context, MatiereListActivity.class)));
-    }
-
-    private void initListEleBtn() {
-        Button lisBtn = findViewById(R.id.ml_eleve_btn);
-        lisBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveListActivity.class)));
-    }
-
     private void initNavBtns() {
         Button classesBtn = findViewById(R.id.ml_classe_btn);
         classesBtn.setOnClickListener(v -> startActivity(new Intent(context, ClasseListActivity.class)));
@@ -72,7 +57,7 @@ public class MatiereListActivity extends AppCompatActivity {
     }
 
     private void initListRv() {
-        RecyclerView listRv = findViewById(R.id.matiere_list_rv);
+        RecyclerView listRv = findViewById(R.id.eleve_list_rv);
         listRv.setAdapter(new MatiereListAdapter(context, dbManager.getAllMatieres()));
         listRv.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }

@@ -2,7 +2,6 @@ package com.example.annuairecnam;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,8 +10,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.annuairecnam.activities.classes.ClasseListActivity;
-import com.example.annuairecnam.activities.eleves.EleveAddActivity;
-import com.example.annuairecnam.databases.DbManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         startActivity(new Intent(MainActivity.this, ClasseListActivity.class));
-
     }
 
 }

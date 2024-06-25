@@ -67,7 +67,7 @@ public class ClasseListActivity extends AppCompatActivity {
     }
 
     private void initListCl() {
-        RecyclerView listCl = findViewById(R.id.matiere_list_rv);
+        RecyclerView listCl = findViewById(R.id.eleve_list_rv);
         listCl.setAdapter(new ClasseListAdapter(context, dbManager.getAllClasses()));
         listCl.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }
