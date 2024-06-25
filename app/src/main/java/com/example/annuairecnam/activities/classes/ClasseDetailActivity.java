@@ -45,17 +45,17 @@ public class ClasseDetailActivity extends AppCompatActivity {
         initListEle();
         initListMat();
 
-        intituleEt = findViewById(R.id.intitule_et);
-        promotionEt = findViewById(R.id.promotion_et);
-        FloatingActionButton updateClBtn = findViewById(R.id.update_btn);
-        FloatingActionButton deleteClBtn = findViewById(R.id.delete_btn);
-        FloatingActionButton returnBtn = findViewById(R.id.return_btn);
+        intituleEt = findViewById(R.id.cd_intitule_ctrl);
+        promotionEt = findViewById(R.id.cd_promotion_ctrl);
+        FloatingActionButton updateClBtn = findViewById(R.id.cd_save_btn);
+        FloatingActionButton deleteClBtn = findViewById(R.id.cd_delete_btn);
+        FloatingActionButton returnBtn = findViewById(R.id.cd_back_to_list_btn);
 
-        FloatingActionButton addElBtn = findViewById(R.id.add_elev_btn);
-        FloatingActionButton deleteElBtn = findViewById(R.id.delete_elev_btn);
+        FloatingActionButton addElBtn = findViewById(R.id.cd_add_eleve_btn);
+        FloatingActionButton deleteElBtn = findViewById(R.id.cd_delete_eleve_btn);
 
-        FloatingActionButton addMtBtn = findViewById(R.id.add_mat_btn);
-        FloatingActionButton deleteMtBtn = findViewById(R.id.delete_mat_btn);
+        FloatingActionButton addMtBtn = findViewById(R.id.cd_add_matiere_btn);
+        FloatingActionButton deleteMtBtn = findViewById(R.id.cd_delete_matiere_btn);
 
         if (classeId != -1) {
             classe = dbManager.getClasse(classeId);
@@ -80,18 +80,16 @@ public class ClasseDetailActivity extends AppCompatActivity {
                     .show();
         });
 
-        deleteClBtn.setOnClickListener(v -> {
-            new AlertDialog.Builder(context)
-                    .setTitle("Confirmation de suppression")
-                    .setMessage("Êtes-vous sûr de vouloir supprimer cette classe ?")
-                    .setPositiveButton(android.R.string.yes, (dialog, which) -> {
-                        dbManager.deleteClasse(classeId);
-                        Toast.makeText(ClasseDetailActivity.this, "Classe supprimée", Toast.LENGTH_SHORT).show();
-                        navigateToList();
-                    })
-                    .setNegativeButton(android.R.string.no, null)
-                    .show();
-        });
+        deleteClBtn.setOnClickListener(v -> new AlertDialog.Builder(context)
+                .setTitle("Confirmation de suppression")
+                .setMessage("Êtes-vous sûr de vouloir supprimer cette classe ?")
+                .setPositiveButton(android.R.string.yes, (dialog, which) -> {
+                    dbManager.deleteClasse(classeId);
+                    Toast.makeText(ClasseDetailActivity.this, "Classe supprimée", Toast.LENGTH_SHORT).show();
+                    navigateToList();
+                })
+                .setNegativeButton(android.R.string.no, null)
+                .show());
 
         returnBtn.setOnClickListener(v -> navigateToClasseList());
 
@@ -153,15 +151,15 @@ public class ClasseDetailActivity extends AppCompatActivity {
     }
 
     private void initListEle() {
-        RecyclerView listEle = findViewById(R.id.recyclerViewLstEle);
-        eleveListAdapter2 = new EleveListAdapter2(context, dbManager.getElevesByClasseId(classeId));
+        RecyclerView listEle = findViewById(R.id.cd_eleves_rv);
+        eleveListAdapter2 = new EleveListAdapter2(dbManager.getElevesByClasseId(classeId));
         listEle.setAdapter(eleveListAdapter2);
         listEle.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }
 
     private void initListMat() {
-        RecyclerView listMat = findViewById(R.id.recyclerViewLstMat);
-        matiereListAdapter2 = new MatiereListAdapter2(context, dbManager.getMatieresByClasseId(classeId));
+        RecyclerView listMat = findViewById(R.id.cd_matieres_rv);
+        matiereListAdapter2 = new MatiereListAdapter2(dbManager.getMatieresByClasseId(classeId));
         listMat.setAdapter(matiereListAdapter2);
         listMat.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }

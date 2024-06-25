@@ -1,5 +1,6 @@
 package com.example.annuairecnam.adapters;
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -12,16 +13,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.annuairecnam.R;
-import com.example.annuairecnam.activities.classes.ClasseDetailActivity;
-import com.example.annuairecnam.activities.classes.ClasseFormActivity;
+import com.example.annuairecnam.activities.notes.NoteActivity;
 import com.example.annuairecnam.models.Classe;
+import com.example.annuairecnam.models.Eleve;
 
 import java.util.ArrayList;
 
-
-public class ClasseListAdapter  extends RecyclerView.Adapter<ClasseListAdapter.ViewHolder> {
-
+public class EleveClasseListAdapter extends RecyclerView.Adapter<EleveClasseListAdapter.ViewHolder> {
     private final Context context;
+    private final Eleve eleve;
     private final ArrayList<Classe> classes;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -29,11 +29,11 @@ public class ClasseListAdapter  extends RecyclerView.Adapter<ClasseListAdapter.V
         private final TextView intituleTv;
         private final TextView promotionTv;
 
-        public ViewHolder(View view) {
+        public ViewHolder(@NonNull View view) {
             super(view);
-            layout = view.findViewById(R.id.cli_rl);
-            intituleTv = view.findViewById(R.id.cli_intitule_tv);
-            promotionTv = view.findViewById(R.id.cli_promotion_tv);
+            layout = view.findViewById(R.id.ecli_rl);
+            intituleTv = view.findViewById(R.id.ecli_intitule_tv);
+            promotionTv = view.findViewById(R.id.ecli_promotion_tv);
         }
 
         public RelativeLayout getLayout() {
@@ -49,41 +49,36 @@ public class ClasseListAdapter  extends RecyclerView.Adapter<ClasseListAdapter.V
         }
     }
 
-    public ClasseListAdapter(Context context, ArrayList<Classe> classes) {
+    public EleveClasseListAdapter(Context context, Eleve eleve, ArrayList<Classe> classes) {
         this.context = context;
+        this.eleve = eleve;
         this.classes = classes;
     }
 
     @NonNull
     @Override
-    public ClasseListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.classe_list_item, parent, false);
-        return new ViewHolder(view);
+                .inflate(R.layout.eleve_classe_list_item, parent, false);
+        return new EleveClasseListAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ClasseListAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Classe classe = classes.get(position);
         holder.getLayout().setOnClickListener(v -> {
-            Intent intent = new Intent(context, ClasseFormActivity.class);
+            Intent intent = new Intent(context, NoteActivity.class);
+            intent.putExtra(String.valueOf(R.string.eleve_tag), eleve);
             intent.putExtra(String.valueOf(R.string.classe_tag), classe);
             context.startActivity(intent);
         });
         holder.getIntituleTv().setText(classe.getIntitule());
         holder.getPromotionTv().setText(classe.getPromotion());
-
-        // Set the click listener
-        holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(context, ClasseDetailActivity.class);
-            intent.putExtra("CLASSE_ID", classe.get_id());
-            context.startActivity(intent);
-        });
     }
 
     @Override
     public int getItemCount() {
         return classes.size();
     }
-}
 
+}

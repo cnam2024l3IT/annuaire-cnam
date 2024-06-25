@@ -8,11 +8,11 @@
     tools:context=".activities.eleves.EleveListActivity2">
 
     <TextView
-        android:id="@+id/textView_title"
+        android:id="@+id/el2_title_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_def"
-        android:text="Liste élève"
+        android:text="@string/eleves_txt"
         android:textSize="@dimen/titlesize_def"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_list2"
+        android:id="@+id/el2_list_rv"
         android:layout_width="388dp"
         android:layout_height="527dp"
         android:layout_marginTop="32dp"
@@ -30,19 +30,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.695"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_title" />
+        app:layout_constraintTop_toBottomOf="@+id/el2_title_tv" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton_addItem"
+        android:id="@+id/el2_add_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+        android:contentDescription="@string/add_txt"
+        android:focusable="true"
         app:backgroundTint="#FFA0A0"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_title"
+        app:layout_constraintBottom_toBottomOf="@+id/el2_title_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView_title"
+        app:layout_constraintTop_toTopOf="@+id/el2_title_tv"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

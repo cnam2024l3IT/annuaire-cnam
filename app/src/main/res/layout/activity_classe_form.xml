@@ -8,7 +8,7 @@
     tools:context=".activities.classes.ClasseFormActivity">
 
     <TextView
-        android:id="@+id/classe_form_tv"
+        android:id="@+id/cf_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10sp"
@@ -22,85 +22,89 @@
         app:layout_constraintVertical_bias="0.061" />
 
     <EditText
-        android:id="@+id/intitule_et"
+        android:id="@+id/cf_intitule_ctrl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
+        android:autofillHints=""
+        android:inputType="text"
         android:width="@dimen/edittextsize_form"
-        android:hint="Intitulé"
+        android:hint="@string/intitule_txt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.751"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/classe_form_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/cf_title_tv" />
 
     <EditText
-        android:id="@+id/promotion_et"
+        android:id="@+id/cf_promotion_ctrl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/textview_margintop_form"
+        android:autofillHints=""
+        android:inputType="text"
         android:width="@dimen/edittextsize_form"
-        android:hint="Promotion"
+        android:hint="@string/promotion_txt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.751"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intitule_et" />
+        app:layout_constraintTop_toBottomOf="@+id/cf_intitule_ctrl" />
 
     <Button
-        android:id="@+id/create_btn"
+        android:id="@+id/cf_save_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="129dp"
         android:width="@dimen/buttonsize_form"
         android:backgroundTint="@color/cnam"
-        android:text="Création"
+        android:text="@string/valider_txt"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/return_btn"
+        app:layout_constraintEnd_toStartOf="@+id/cf_back_to_list_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/promotion_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/cf_promotion_tv" />
 
     <Button
-        android:id="@+id/return_btn"
+        android:id="@+id/cf_back_to_list_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
         android:layout_marginEnd="44dp"
         android:width="@dimen/buttonsize_form"
         android:backgroundTint="@color/cnam"
-        android:text="Retour"
+        android:text="@string/retour_txt"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/promotion_et"
+        app:layout_constraintTop_toBottomOf="@+id/cf_promotion_ctrl"
         app:layout_constraintVertical_bias="0.483" />
 
     <TextView
-        android:id="@+id/intitule_tv"
+        android:id="@+id/cf_intitule_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/textview_margin_form"
         android:layout_marginTop="81dp"
         android:layout_marginRight="@dimen/textview_margin_form"
-        android:text="Intitulé :"
+        android:text="@string/intitule_txt"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/intitule_et"
+        app:layout_constraintEnd_toStartOf="@+id/cf_intitule_ctrl"
         app:layout_constraintHorizontal_bias="0.281"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/classe_form_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/cf_title_tv" />
 
     <TextView
-        android:id="@+id/promotion_tv"
+        android:id="@+id/cf_promotion_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/textview_margin_form"
         android:layout_marginTop="64dp"
         android:layout_marginRight="@dimen/textview_margin_form"
-        android:text="Promotion :"
+        android:text="@string/promotion_txt"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/promotion_et"
+        app:layout_constraintEnd_toStartOf="@+id/cf_promotion_ctrl"
         app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intitule_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/cf_intitule_tv" />
 
 
 

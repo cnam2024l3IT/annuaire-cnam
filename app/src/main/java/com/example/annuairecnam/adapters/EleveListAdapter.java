@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.annuairecnam.R;
-import com.example.annuairecnam.activities.eleves.EleveFormActivity;
+import com.example.annuairecnam.activities.eleves.EleveEditActivity;
 import com.example.annuairecnam.models.Eleve;
 
 import java.util.ArrayList;
@@ -28,8 +28,8 @@ public class EleveListAdapter extends RecyclerView.Adapter<EleveListAdapter.View
 
         public ViewHolder(View view) {
             super(view);
-            layout = view.findViewById(R.id.eleve_list_item_rl);
-            intituleTv = view.findViewById(R.id.mli_intitule_tv);
+            layout = view.findViewById(R.id.eli_rl);
+            intituleTv = view.findViewById(R.id.eli_intitule_tv);
 
         }
         public RelativeLayout getLayout() {
@@ -57,7 +57,7 @@ public class EleveListAdapter extends RecyclerView.Adapter<EleveListAdapter.View
     public void onBindViewHolder(@NonNull EleveListAdapter.ViewHolder holder, int position) {
         Eleve eleve = eleves.get(position);
         holder.layout.setOnClickListener(v -> {
-            Intent intent = new Intent(context, EleveFormActivity.class);
+            Intent intent = new Intent(context, EleveEditActivity.class);
             intent.putExtra(String.valueOf(R.string.eleve_tag), eleve);
             context.startActivity(intent);
         });

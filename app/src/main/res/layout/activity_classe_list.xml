@@ -8,7 +8,7 @@
     tools:context=".activities.classes.ClasseListActivity">
 
     <TextView
-        android:id="@+id/textView_title"
+        android:id="@+id/cl_title_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_def"
@@ -21,34 +21,36 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_list"
+        android:id="@+id/cl_list_rv"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_def"
         android:layout_marginBottom="@dimen/margin_def"
         android:padding="@dimen/padding_def"
-        app:layout_constraintBottom_toTopOf="@+id/button_matieres"
+        app:layout_constraintBottom_toTopOf="@+id/cl_matieres_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_title"
+        app:layout_constraintTop_toBottomOf="@+id/cl_title_tv"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton_addItem"
+        android:id="@+id/cl_add_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+        android:contentDescription="@string/add_txt"
+        android:focusable="true"
         app:backgroundTint="#FFA0A0"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_title"
+        app:layout_constraintBottom_toBottomOf="@+id/cl_title_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView_title"
+        app:layout_constraintTop_toTopOf="@+id/cl_title_tv"
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <Button
-        android:id="@+id/button_matieres"
+        android:id="@+id/cl_matieres_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_def"
@@ -60,7 +62,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button_eleves"
+        android:id="@+id/cl_eleves_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_def"
@@ -69,10 +71,10 @@
         android:textSize="@dimen/textsize_def"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_matieres" />
+        app:layout_constraintStart_toEndOf="@+id/cl_matieres_btn" />
 
     <Button
-        android:id="@+id/button_classes"
+        android:id="@+id/cl_classes_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_def"
@@ -80,7 +82,7 @@
         android:text="@string/classe_tag"
         android:textSize="@dimen/textsize_def"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_matieres"
+        app:layout_constraintEnd_toStartOf="@+id/cl_matieres_btn"
         app:layout_constraintStart_toStartOf="parent" />
 
 

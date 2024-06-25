@@ -28,7 +28,7 @@ public class MatiereListAdapter extends RecyclerView.Adapter<MatiereListAdapter.
 
         public ViewHolder(View view) {
             super(view);
-            layout = view.findViewById(R.id.matiere_list_item_rl);
+            layout = view.findViewById(R.id.mli_rl);
             intituleTv = view.findViewById(R.id.mli_intitule_tv);
         }
 

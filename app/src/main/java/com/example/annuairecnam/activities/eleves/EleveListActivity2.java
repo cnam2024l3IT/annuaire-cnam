@@ -55,7 +55,7 @@ public class EleveListActivity2 extends AppCompatActivity {
     }
 
     private void initAddClElBtn() {
-        FloatingActionButton addBtn = findViewById(R.id.floatingActionButton_addItem);
+        FloatingActionButton addBtn = findViewById(R.id.el2_add_btn);
         addBtn.setOnClickListener(v -> {
             Set<Long> selectedEleveIds = EleveListAdapter2.getSelectedEleveIds();
             if (selectedEleveIds.isEmpty()) {
@@ -81,10 +81,10 @@ public class EleveListActivity2 extends AppCompatActivity {
 
 
     private void initListRc() {
-        RecyclerView listRc = findViewById(R.id.recyclerView_list2);
+        RecyclerView listRc = findViewById(R.id.el2_list_rv);
         List<Eleve> eleves = dbManager.getElevesByNotInClasseId(classeId);
 
-        EleveListAdapter2 = new EleveListAdapter2(context, dbManager.getElevesByNotInClasseId(classeId));
+        EleveListAdapter2 = new EleveListAdapter2(dbManager.getElevesByNotInClasseId(classeId));
         listRc.setAdapter(EleveListAdapter2);
         listRc.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
 

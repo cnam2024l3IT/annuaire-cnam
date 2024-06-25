@@ -12,5 +12,20 @@
     <string name="titre_list">Liste:</string>
     <string name="matiere_detail_txt">Détail Matière</string>
     <string name="classe_detail_txt">Détail Classe</string>
+    <string name="eleve_classes_title_txt">Classes</string>
+    <string name="supprimer_txt">Supprimer</string>
     <string name="acceder_annuaire">Accéder à l\'Annuaire</string>
+    <string name="nom_txt">Nom</string>
+    <string name="prenom_txt">Prénom</string>
+    <string name="professeur_txt">Professeur</string>
+    <string name="description_txt">Description</string>
+    <string name="valider_txt">Valider</string>
+    <string name="retour_txt">Retour</string>
+    <string name="classe_txt">Classe</string>
+    <string name="eleves_txt">Elèves</string>
+    <string name="matieres_txt">Matières</string>
+    <string name="logo_txt">logo Cnam</string>
+    <string name="date_naissance_txt">Date de naissance</string>
+    <string name="email_txt">Email</string>
+    <string name="telephone_txt">Téléphone</string>
 </resources>

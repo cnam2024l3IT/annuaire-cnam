@@ -46,28 +46,27 @@ public class ClasseListActivity extends AppCompatActivity {
 
 
     private void initAddBtn() {
-        FloatingActionButton addBtn = (FloatingActionButton) findViewById(R.id.floatingActionButton_addItem);
+        FloatingActionButton addBtn = findViewById(R.id.cl_add_btn);
         addBtn.setOnClickListener(v -> startActivity(new Intent(this, ClasseFormActivity.class)));
-        //navigateToList();
     }
 
     private void initListClBtn() {
-        Button lisBtn = findViewById(R.id.button_classes);
+        Button lisBtn = findViewById(R.id.cl_classes_btn);
         lisBtn.setOnClickListener(v -> startActivity(new Intent(context, ClasseListActivity.class)));
     }
 
     private void initListMatBtn() {
-        Button lisBtn = findViewById(R.id.button_matieres);
+        Button lisBtn = findViewById(R.id.cl_matieres_btn);
         lisBtn.setOnClickListener(v -> startActivity(new Intent(context, MatiereListActivity.class)));
     }
 
     private void initListEleBtn() {
-        Button lisBtn = findViewById(R.id.button_eleves);
+        Button lisBtn = findViewById(R.id.cl_eleves_btn);
         lisBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveListActivity.class)));
     }
 
     private void initListCl() {
-        RecyclerView listCl = findViewById(R.id.recyclerView_list);
+        RecyclerView listCl = findViewById(R.id.cl_list_rv);
         listCl.setAdapter(new ClasseListAdapter(context, dbManager.getAllClasses()));
         listCl.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }
@@ -79,12 +78,6 @@ public class ClasseListActivity extends AppCompatActivity {
     private void initContext() {
         context = this;
     }
-
-//    private void navigateToList() {
-//        Intent intent = new Intent(ClasseListActivity.this,ClasseListActivity.class);
-//        startActivity(intent);
-//        finish();
-//    }
 
     @Override
     protected void onDestroy() {

@@ -1,6 +1,5 @@
 package com.example.annuairecnam.activities.matieres;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -15,7 +14,6 @@ import com.example.annuairecnam.models.Matiere;
 
 public class MatiereDetailActivity extends AppCompatActivity {
     private EditText intituleEt, descriptionEt, professeurEt;
-    private Button updateBtn, deleteBtn, returnBtn;
     private DbManager dbManager;
     private Matiere matiere;
     private long matiereId;
@@ -27,12 +25,12 @@ public class MatiereDetailActivity extends AppCompatActivity {
 
         dbManager = new DbManager(this).open();
 
-        intituleEt = findViewById(R.id.intitule_et);
-        descriptionEt = findViewById(R.id.description_et);
-        professeurEt = findViewById(R.id.professeur_et);
-        updateBtn = findViewById(R.id.update_btn);
-        deleteBtn = findViewById(R.id.delete_btn);
-        returnBtn = findViewById(R.id.return_btn);
+        intituleEt = findViewById(R.id.md_intitule_ctrl);
+        descriptionEt = findViewById(R.id.md_description_ctrl);
+        professeurEt = findViewById(R.id.md_professeur_ctrl);
+        Button updateBtn = findViewById(R.id.md_save_btn);
+        Button deleteBtn = findViewById(R.id.md_delete_btn);
+        Button returnBtn = findViewById(R.id.md_back_to_list_btn);
 
         matiereId = getIntent().getLongExtra("matiere_id", -1);
 
@@ -61,9 +59,7 @@ public class MatiereDetailActivity extends AppCompatActivity {
             navigateToList();
         });
 
-        returnBtn.setOnClickListener(v -> {
-            navigateToList();
-        });
+        returnBtn.setOnClickListener(v -> navigateToList());
     }
 
     private void navigateToList() {

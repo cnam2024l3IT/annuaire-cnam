@@ -103,12 +103,12 @@ public class DbManager {
      */
     public ArrayList<Eleve> getAllEleves() {
         String[] columns = new String[] { DataContract.EleveTable._ID,DataContract.EleveTable.NOM,
-                DataContract.EleveTable.PRENOM };
+                DataContract.EleveTable.PRENOM,DataContract.EleveTable.DATE_NAISSANCE,DataContract.EleveTable.EMAIL,DataContract.EleveTable.TELEPHONE };
         ArrayList<Eleve> eleves = new ArrayList<>();
         try (Cursor cursor = fetchAll(DataContract.EleveTable.TABLE_NAME, columns)) {
             if (cursor.moveToFirst())
                 do eleves.add(new Eleve(cursor.getLong(0), cursor.getString(1),
-                        cursor.getString(2))); while (cursor.moveToNext());
+                        cursor.getString(2),cursor.getString(3),cursor.getString(4),cursor.getString(5))); while (cursor.moveToNext());
         }
         return eleves;
     }

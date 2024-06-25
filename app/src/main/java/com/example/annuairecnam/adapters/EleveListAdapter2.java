@@ -1,6 +1,5 @@
 package com.example.annuairecnam.adapters;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +18,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class EleveListAdapter2 extends RecyclerView.Adapter<EleveListAdapter2.ViewHolder> {
-
-    private final Context context;
     private final ArrayList<Eleve> eleves;
     private final Set<Long> selectedEleveIds = new HashSet<>();
 
@@ -32,10 +29,10 @@ public class EleveListAdapter2 extends RecyclerView.Adapter<EleveListAdapter2.Vi
 
         public ViewHolder(View view) {
             super(view);
-            layout = view.findViewById(R.id.eleve_list2_item_rl);
-            intituleTv = view.findViewById(R.id.mli_intitule_tv);
-            prenomTv = view.findViewById(R.id.mli_prenom_tv);
-            checkBox = view.findViewById(R.id.eleve_checkbox);
+            layout = view.findViewById(R.id.eli2_rl);
+            intituleTv = view.findViewById(R.id.eli2_nom_tv);
+            prenomTv = view.findViewById(R.id.eli2_prenom_tv);
+            checkBox = view.findViewById(R.id.eli2_checkbox);
         }
 
         public RelativeLayout getLayout() {
@@ -55,8 +52,7 @@ public class EleveListAdapter2 extends RecyclerView.Adapter<EleveListAdapter2.Vi
         }
     }
 
-    public EleveListAdapter2(Context context, ArrayList<Eleve> eleves) {
-        this.context = context;
+    public EleveListAdapter2(ArrayList<Eleve> eleves) {
         this.eleves = eleves;
     }
 
@@ -72,7 +68,6 @@ public class EleveListAdapter2 extends RecyclerView.Adapter<EleveListAdapter2.Vi
         Eleve eleve = eleves.get(position);
         holder.getIntituleTv().setText(eleve.getNom());
         holder.getPrenomTv().setText(eleve.getPrenom());
-
         holder.getCheckBox().setOnCheckedChangeListener(null);
         holder.getCheckBox().setChecked(selectedEleveIds.contains(eleve.get_id()));
         holder.getCheckBox().setOnCheckedChangeListener((buttonView, isChecked) -> {

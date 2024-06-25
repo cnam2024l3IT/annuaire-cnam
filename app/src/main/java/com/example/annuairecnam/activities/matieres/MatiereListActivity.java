@@ -45,27 +45,27 @@ public class MatiereListActivity extends AppCompatActivity {
     }
 
     private void initAddBtn() {
-        FloatingActionButton addBtn = findViewById(R.id.floatingActionButton_addItem);
+        FloatingActionButton addBtn = findViewById(R.id.ml_add_btn);
         addBtn.setOnClickListener(v -> startActivity(new Intent(context, MatiereFormActivity.class)));
     }
 
     private void initListClBtn() {
-        Button lisBtn = findViewById(R.id.button_classes);
+        Button lisBtn = findViewById(R.id.ml_classes_btn);
         lisBtn.setOnClickListener(v -> startActivity(new Intent(context, ClasseListActivity.class)));
     }
 
     private void initListMatBtn() {
-        Button lisBtn = findViewById(R.id.button_matieres);
+        Button lisBtn = findViewById(R.id.ml_matieres_btn);
         lisBtn.setOnClickListener(v -> startActivity(new Intent(context, MatiereListActivity.class)));
     }
 
     private void initListEleBtn() {
-        Button lisBtn = findViewById(R.id.button_eleves);
+        Button lisBtn = findViewById(R.id.ml_eleves_btn);
         lisBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveListActivity.class)));
     }
 
     private void initListRc() {
-        RecyclerView listRc = findViewById(R.id.recyclerView_list);
+        RecyclerView listRc = findViewById(R.id.ml_list_rv);
         listRc.setAdapter(new MatiereListAdapter(context, dbManager.getAllMatieres()));
         listRc.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }
