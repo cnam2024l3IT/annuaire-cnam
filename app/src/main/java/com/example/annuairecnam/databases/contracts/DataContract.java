@@ -102,4 +102,20 @@ public class DataContract {
             + MatiereTable._ID + ", " + MatiereTable.INTITULE + " FROM " + NoteTable.TABLE_NAME + " INNER JOIN " + MatiereTable.TABLE_NAME + " ON "
             + NoteTable.TABLE_NAME + "." + NoteTable.MATIERE_ID + " = " + MatiereTable.TABLE_NAME + "." + MatiereTable._ID + " WHERE " + NoteTable.CLASSE_ID + " = ? AND "
             + NoteTable.ELEVE_ID + " = ?";
+
+
+    public static final String SQL_ELEVES_NOIN_CLASSE_ID = "SELECT " + EleveTable.TABLE_NAME + "." + EleveTable._ID + ", "
+            + EleveTable.NOM + ", " + EleveTable.PRENOM + " FROM " + EleveTable.TABLE_NAME
+            + " WHERE NOT EXISTS (SELECT NULL FROM "+ ClasseEleveTable.TABLE_NAME +
+            " as x WHERE x."+ClasseEleveTable.CLASSE_ID + "= ? "+
+            " AND x."+ ClasseEleveTable.ELEVE_ID + " = " + EleveTable.TABLE_NAME + "." + EleveTable._ID+")";
+
+
+    public static final String SQL_MATIERES_NOIN_CLASSE_ID = "SELECT " + MatiereTable.TABLE_NAME + "." + MatiereTable._ID + ", "
+            + MatiereTable.INTITULE +  " FROM " + MatiereTable.TABLE_NAME
+            + " WHERE NOT EXISTS (SELECT NULL FROM "+ ClasseMatiereTable.TABLE_NAME +
+            " as x WHERE x."+ClasseMatiereTable.CLASSE_ID + "= ? "+
+            " AND x."+ ClasseMatiereTable.MATIERE_ID + " = " + MatiereTable.TABLE_NAME + "." + MatiereTable._ID+")";
+
+
 }

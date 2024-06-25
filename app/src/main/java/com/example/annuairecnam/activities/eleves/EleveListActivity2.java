@@ -77,7 +77,7 @@ public class EleveListActivity2 extends AppCompatActivity {
 
     private void initListRc() {
         RecyclerView listRc = findViewById(R.id.recyclerView_list2);
-        EleveListAdapter2 = new EleveListAdapter2(context, dbManager.getAllEleves());
+        EleveListAdapter2 = new EleveListAdapter2(context, dbManager.getElevesByNotInClasseId(classeId));
         listRc.setAdapter(EleveListAdapter2);
         listRc.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }

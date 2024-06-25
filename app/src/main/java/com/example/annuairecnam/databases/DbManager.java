@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
+import android.util.Log;
 
 import com.example.annuairecnam.databases.contracts.DataContract;
 import com.example.annuairecnam.databases.helpers.DatabaseHelper;
@@ -417,6 +418,52 @@ public class DbManager {
         String[] whereArgs = { String.valueOf(classeId), String.valueOf(eleveId) };
         dbHelper.getWritableDatabase().delete(DataContract.ClasseEleveTable.TABLE_NAME, whereClause, whereArgs);
     }
+
+    /**
+     * Récupération liste des élèves qui n existe pas dans une certaine classe
+     * @param classeId id classe
+     * @return tableau de notes
+     */
+    public ArrayList<Eleve> getElevesByNotInClasseId(long classeId) {
+        ArrayList<Eleve> eleves = new ArrayList<>();
+        String[] selectionArgs = new String[]{Long.toString(classeId)};
+
+        Log.d("TEVA",DataContract.SQL_ELEVES_NOIN_CLASSE_ID);
+        try (Cursor cursor = fetchSQL(DataContract.SQL_ELEVES_NOIN_CLASSE_ID, selectionArgs)) {
+            if (cursor.moveToFirst()) {
+                do {
+                    long id = cursor.getLong(cursor.getColumnIndexOrThrow(DataContract.EleveTable._ID));
+                    String nom = cursor.getString(cursor.getColumnIndexOrThrow(DataContract.EleveTable.NOM));
+                    String prenom = cursor.getString(cursor.getColumnIndexOrThrow(DataContract.EleveTable.PRENOM));
+                    eleves.add(new Eleve(id, nom, prenom));
+                } while (cursor.moveToNext());
+            }
+        }
+
+        return eleves;
+    }
+
+    /**
+     * Récupération liste des élèves qui n existe pas dans une certaine classe
+     * @param classeId id classe
+     * @return tableau de notes
+     */
+    public ArrayList<Matiere> getMatieresByNotInClasseId(long classeId) {
+        ArrayList<Matiere> matieres = new ArrayList<>();
+        String[] selectionArgs = new String[]{Long.toString(classeId)};
+        try (Cursor cursor = fetchSQL(DataContract.SQL_MATIERES_NOIN_CLASSE_ID, selectionArgs)) {
+            if (cursor.moveToFirst()) {
+                do {
+                    long id = cursor.getLong(cursor.getColumnIndexOrThrow(DataContract.MatiereTable._ID));
+                    String intitule = cursor.getString(cursor.getColumnIndexOrThrow(DataContract.MatiereTable.INTITULE));
+                    matieres.add(new Matiere(id, intitule));
+                } while (cursor.moveToNext());
+            }
+        }
+
+        return matieres;
+    }
+
 
 
 }

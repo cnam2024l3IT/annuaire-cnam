@@ -1,7 +1,10 @@
 package com.example.annuairecnam.activities.matieres;
 
+import static com.example.annuairecnam.databases.contracts.DataContract.SQL_MATIERES_NOIN_CLASSE_ID;
+
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -86,7 +89,9 @@ public class MatiereListActivity2 extends AppCompatActivity {
 
     private void initListRc() {
         RecyclerView listRc = findViewById(R.id.recyclerView_list);
-        MatiereListAdapter2 = new MatiereListAdapter2(context, dbManager.getAllMatieres());
+
+        Log.d("TEVA SQL_MATIERES_NOIN_CLASSE_ID ",SQL_MATIERES_NOIN_CLASSE_ID);
+        MatiereListAdapter2 = new MatiereListAdapter2(context, dbManager.getMatieresByNotInClasseId(classeId));
         listRc.setAdapter(MatiereListAdapter2);
         listRc.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }
