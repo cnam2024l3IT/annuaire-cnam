@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-//        startActivity(new Intent(MainActivity.this, ClasseListActivity.class));
+        startActivity(new Intent(MainActivity.this, ClasseListActivity.class));
 
         findViewById(R.id.add_btn).setOnClickListener(v -> startActivity(new Intent(this, EleveAddActivity.class)));
 //        findViewById(R.id.edit_btn).setOnClickListener(v -> startActivity(new Intent(this)));
