@@ -22,6 +22,11 @@
             android:exported="false" />
 
         <activity
+            android:name=".activities.eleves.EleveListActivity2"
+            android:exported="false" />
+
+
+        <activity
             android:name=".activities.classes.ClasseDetailActivity"
             android:exported="false" />
         <activity
@@ -35,6 +40,9 @@
             android:exported="false" />
         <activity
             android:name=".activities.matieres.MatiereListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.matieres.MatiereListActivity2"
             android:exported="false" />
 
         <activity

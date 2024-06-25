@@ -93,4 +93,5 @@ public class EleveListAdapter2 extends RecyclerView.Adapter<EleveListAdapter2.Vi
     public Set<Long> getSelectedEleveIds() {
         return selectedEleveIds;
     }
+
 }

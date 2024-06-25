@@ -1,6 +1,7 @@
 package com.example.annuairecnam.activities.matieres;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -14,10 +15,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.annuairecnam.R;
+import com.example.annuairecnam.activities.classes.ClasseDetailActivity;
 import com.example.annuairecnam.adapters.MatiereListAdapter2;
 import com.example.annuairecnam.databases.DbManager;
+import com.example.annuairecnam.models.Matiere;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.List;
 import java.util.Set;
 
 public class MatiereListActivity2 extends AppCompatActivity {
@@ -72,6 +76,7 @@ public class MatiereListActivity2 extends AppCompatActivity {
                         .setPositiveButton(android.R.string.yes, (dialog, which) -> {
                             for (Long matiereId : selectedMatiereIds) {
                                 dbManager.insertClasseMatiere(classeId, matiereId);
+                                navigateToList();
                             }
                             Toast.makeText(MatiereListActivity2.this, "Matières ajoutées", Toast.LENGTH_SHORT).show();
                             //Retour à la ClasseDetail
@@ -86,9 +91,16 @@ public class MatiereListActivity2 extends AppCompatActivity {
 
     private void initListRc() {
         RecyclerView listRc = findViewById(R.id.recyclerView_list);
-        MatiereListAdapter2 = new MatiereListAdapter2(context, dbManager.getAllMatieres());
+
+        List<Matiere> matieres = dbManager.getMatieresByNotInClasseId(classeId);
+        MatiereListAdapter2 = new MatiereListAdapter2(context, dbManager.getMatieresByNotInClasseId(classeId));
         listRc.setAdapter(MatiereListAdapter2);
         listRc.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
+
+        if (matieres.isEmpty()) {
+            Toast.makeText(context, "Aucune matière ne peut être rajouter", Toast.LENGTH_SHORT).show();
+            navigateToList();
+        }
     }
 
     private void initDbManager() {
@@ -97,6 +109,12 @@ public class MatiereListActivity2 extends AppCompatActivity {
 
     private void initContext() {
         context = this;
+    }
+
+    private void navigateToList() {
+        Intent intent = new Intent(MatiereListActivity2.this, ClasseDetailActivity.class);
+        intent.putExtra("CLASSE_ID", classeId);
+        startActivity(intent);
     }
 
     @Override
