@@ -80,18 +80,16 @@ public class ClasseDetailActivity extends AppCompatActivity {
                     .show();
         });
 
-        deleteClBtn.setOnClickListener(v -> {
-            new AlertDialog.Builder(context)
-                    .setTitle("Confirmation de suppression")
-                    .setMessage("Êtes-vous sûr de vouloir supprimer cette classe ?")
-                    .setPositiveButton(android.R.string.yes, (dialog, which) -> {
-                        dbManager.deleteClasse(classeId);
-                        Toast.makeText(ClasseDetailActivity.this, "Classe supprimée", Toast.LENGTH_SHORT).show();
-                        navigateToList();
-                    })
-                    .setNegativeButton(android.R.string.no, null)
-                    .show();
-        });
+        deleteClBtn.setOnClickListener(v -> new AlertDialog.Builder(context)
+                .setTitle("Confirmation de suppression")
+                .setMessage("Êtes-vous sûr de vouloir supprimer cette classe ?")
+                .setPositiveButton(android.R.string.yes, (dialog, which) -> {
+                    dbManager.deleteClasse(classeId);
+                    Toast.makeText(ClasseDetailActivity.this, "Classe supprimée", Toast.LENGTH_SHORT).show();
+                    navigateToList();
+                })
+                .setNegativeButton(android.R.string.no, null)
+                .show());
 
         returnBtn.setOnClickListener(v -> navigateToClasseList());
 
