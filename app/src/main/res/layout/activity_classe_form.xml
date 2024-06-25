@@ -52,7 +52,7 @@
         android:layout_marginTop="129dp"
         android:width="@dimen/buttonsize_form"
         android:backgroundTint="@color/cnam"
-        android:text="Création"
+        android:text="@string/valider_txt"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cf_back_to_list_btn"

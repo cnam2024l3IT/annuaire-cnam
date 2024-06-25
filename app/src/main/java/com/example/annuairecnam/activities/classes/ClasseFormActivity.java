@@ -16,7 +16,6 @@ import com.example.annuairecnam.models.Classe;
 
 public class ClasseFormActivity extends AppCompatActivity {
     private EditText intituleEt, promotionEt;
-    private Button createBtn, returnBtn;
     private DbManager dbManager;
     private long classeId;
 
@@ -33,8 +32,8 @@ public class ClasseFormActivity extends AppCompatActivity {
         // Récupération des vues
         intituleEt = findViewById(R.id.cf_intitule_ctrl);
         promotionEt = findViewById(R.id.cf_promotion_ctrl);
-        createBtn = findViewById(R.id.cf_save_btn);
-        returnBtn = findViewById(R.id.cf_back_to_list_btn);
+        Button createBtn = findViewById(R.id.cf_save_btn);
+        Button returnBtn = findViewById(R.id.cf_back_to_list_btn);
 
         // Récupération de l'ID de la classe si disponible
         classeId = getIntent().getLongExtra("classe_id", -1);
@@ -69,7 +68,6 @@ public class ClasseFormActivity extends AppCompatActivity {
                 promotionEt.setText(classeExistante.getPromotion());
 
                 // OnClickListener pour le bouton de mise à jour
-                createBtn.setText("Mettre à jour");
                 createBtn.setOnClickListener(v -> {
                     classeExistante.setIntitule(intituleEt.getText().toString());
                     classeExistante.setPromotion(promotionEt.getText().toString());
@@ -88,9 +86,7 @@ public class ClasseFormActivity extends AppCompatActivity {
                 navigateToList();
             }
         }
-        returnBtn.setOnClickListener(v -> {
-            navigateToList();
-        });
+        returnBtn.setOnClickListener(v -> navigateToList());
     }
 
     // Méthode pour naviguer vers la liste des matières (MatiereListActivity)

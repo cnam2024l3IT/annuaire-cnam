@@ -2,7 +2,6 @@ package com.example.annuairecnam.activities.matieres;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -51,16 +50,16 @@ public class MatiereDetailActivity extends AppCompatActivity {
 
             dbManager.updateMatiere(matiereId, matiere);
             Toast.makeText(MatiereDetailActivity.this, "Matière mise à jour", Toast.LENGTH_SHORT).show();
-            navigateToList(v);
+            navigateToList();
         });
 
         deleteBtn.setOnClickListener(v -> {
             dbManager.deleteMatiere(matiereId);
             Toast.makeText(MatiereDetailActivity.this, "Matière supprimée", Toast.LENGTH_SHORT).show();
-            navigateToList(v);
+            navigateToList();
         });
 
-        returnBtn.setOnClickListener(this::navigateToList);
+        returnBtn.setOnClickListener(v -> navigateToList());
     }
 
     private void navigateToList() {
@@ -73,9 +72,5 @@ public class MatiereDetailActivity extends AppCompatActivity {
     protected void onDestroy() {
         dbManager.close();
         super.onDestroy();
-    }
-
-    private void navigateToList(View v) {
-        navigateToList();
     }
 }
