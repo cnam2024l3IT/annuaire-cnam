@@ -33,8 +33,8 @@ public class ClasseFormActivity extends AppCompatActivity {
         // Récupération des vues
         intituleEt = findViewById(R.id.intitule_et);
         promotionEt = findViewById(R.id.promotion_et);
-        createBtn = findViewById(R.id.create_btn);
-        returnBtn = findViewById(R.id.return_btn);
+        createBtn = findViewById(R.id.caf_valider_btn);
+        returnBtn = findViewById(R.id.caf_retour_btn);
 
         // Récupération de l'ID de la classe si disponible
         classeId = getIntent().getLongExtra("classe_id", -1);

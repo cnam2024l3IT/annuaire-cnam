@@ -12,4 +12,6 @@
     <string name="titre_list">Liste:</string>
     <string name="matiere_detail_txt">Détail Matière</string>
     <string name="classe_detail_txt">Détail Classe</string>
+    <string name="eleve_classes_title_txt">Classes</string>
+    <string name="supprimer_txt">Supprimer</string>
 </resources>

@@ -1,6 +1,5 @@
 package com.example.annuairecnam.activities.matieres;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -32,7 +31,7 @@ public class MatiereDetailActivity extends AppCompatActivity {
         professeurEt = findViewById(R.id.professeur_et);
         updateBtn = findViewById(R.id.update_btn);
         deleteBtn = findViewById(R.id.delete_btn);
-        returnBtn = findViewById(R.id.return_btn);
+        returnBtn = findViewById(R.id.eef_retour_btn);
 
         matiereId = getIntent().getLongExtra("matiere_id", -1);
 

@@ -33,8 +33,8 @@ public class MatiereFormActivity extends AppCompatActivity {
         intituleEt = findViewById(R.id.intitule_et);
         descriptionEt = findViewById(R.id.description_et);
         professeurEt = findViewById(R.id.professeur_et);
-        createBtn = findViewById(R.id.create_btn);
-        returnBtn = findViewById(R.id.return_btn);
+        createBtn = findViewById(R.id.eef_valider_btn);
+        returnBtn = findViewById(R.id.eef_retour_btn);
 
         // Récupération de l'ID de la matière si disponible
         matiereId = getIntent().getLongExtra("matiere_id", -1);

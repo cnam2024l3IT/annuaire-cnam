@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/intitule_et" />
 
     <Button
-        android:id="@+id/create_btn"
+        android:id="@+id/caf_valider_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="129dp"
@@ -55,12 +55,12 @@
         android:text="Création"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/return_btn"
+        app:layout_constraintEnd_toStartOf="@+id/caf_retour_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/promotion_tv" />
 
     <Button
-        android:id="@+id/return_btn"
+        android:id="@+id/caf_retour_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"

@@ -21,11 +21,12 @@ public class Eleve extends DataInfo {
         this.prenom = prenom;
     }
 
-    public Eleve(String nom, String prenom, String dateNaissance, String email) {
+    public Eleve(String nom, String prenom, String dateNaissance, String email, String telephone) {
         this.nom = nom;
         this.prenom = prenom;
         this.dateNaissance = dateNaissance;
         this.email = email;
+        this.telephone = telephone;
     }
 
     public Eleve(long _id, String nom, String prenom, String dateNaissance, String email, String telephone) {

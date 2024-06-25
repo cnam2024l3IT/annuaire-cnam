@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_title" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton_addItem"
+        android:id="@+id/ml_add_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"

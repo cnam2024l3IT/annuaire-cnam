@@ -49,7 +49,7 @@ public class ClasseDetailActivity extends AppCompatActivity {
         promotionEt = findViewById(R.id.promotion_et);
         FloatingActionButton updateClBtn = findViewById(R.id.update_btn);
         FloatingActionButton deleteClBtn = findViewById(R.id.delete_btn);
-        FloatingActionButton returnBtn = findViewById(R.id.return_btn);
+        FloatingActionButton returnBtn = findViewById(R.id.cef_retour_btn);
 
         FloatingActionButton addElBtn = findViewById(R.id.add_elev_btn);
         FloatingActionButton deleteElBtn = findViewById(R.id.delete_elev_btn);
@@ -153,7 +153,7 @@ public class ClasseDetailActivity extends AppCompatActivity {
     }
 
     private void initListEle() {
-        RecyclerView listEle = findViewById(R.id.recyclerViewLstEle);
+        RecyclerView listEle = findViewById(R.id.eef_classes_rv);
         eleveListAdapter2 = new EleveListAdapter2(context, dbManager.getElevesByClasseId(classeId));
         listEle.setAdapter(eleveListAdapter2);
         listEle.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));

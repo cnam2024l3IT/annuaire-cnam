@@ -34,39 +34,33 @@ public class EleveListActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
         initContext();
         initDbManager();
-        initListRc();
+        initListRv();
         initAddBtn();
-        initListMatBtn();
-        initListEleBtn();
-        initListClBtn();
+        initNavBtns();
     }
-
+    
     private void initAddBtn() {
-        FloatingActionButton addBtn = findViewById(R.id.floatingActionButton_addItem);
-        addBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveFormActivity.class)));
-    }
-    private void initListClBtn() {
-        Button lisBtn = findViewById(R.id.button_classes);
-        lisBtn.setOnClickListener(v -> startActivity(new Intent(context, ClasseListActivity.class)));
+        FloatingActionButton addBtn = findViewById(R.id.ml_add_btn);
+        addBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveAddActivity.class)));
     }
 
-    private void initListMatBtn() {
-        Button lisBtn = findViewById(R.id.button_matieres);
-        lisBtn.setOnClickListener(v -> startActivity(new Intent(context, MatiereListActivity.class)));
+    private void initNavBtns() {
+        Button classesBtn = findViewById(R.id.ml_classe_btn);
+        classesBtn.setOnClickListener(v -> startActivity(new Intent(context, ClasseListActivity.class)));
+        Button matieresBtn = findViewById(R.id.ml_matiere_btn);
+        matieresBtn.setOnClickListener(v -> startActivity(new Intent(context, MatiereListActivity.class)));
+        Button elevesBtn = findViewById(R.id.ml_eleve_btn);
+        elevesBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveListActivity.class)));
     }
 
-    private void initListEleBtn() {
-        Button lisBtn = findViewById(R.id.button_eleves);
-        lisBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveListActivity.class)));
+    private void initListRv() {
+        RecyclerView listRv = findViewById(R.id.eleve_list_rv);
+        listRv.setAdapter(new EleveListAdapter(context, dbManager.getAllEleves()));
+        listRv.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }
-    private void initListRc() {
-        RecyclerView listRc = findViewById(R.id.RecyclerView_list);
-        listRc.setAdapter(new EleveListAdapter(context, dbManager.getAllEleves()));
-        listRc.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
-    }
+
 
     private void initDbManager() {
         dbManager = new DbManager(context).open();

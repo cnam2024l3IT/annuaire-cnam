@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.eleves.EleveEditActivity">
+
+    <Button
+        android:id="@+id/eef_supprimer_btn"
+        android:layout_width="161dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/cnam"
+        android:text="@string/supprimer_txt"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.629"
+        app:layout_constraintStart_toEndOf="@+id/eleve_form_tv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/eef_classes_rv"
+        android:layout_width="319dp"
+        android:layout_height="215dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.206"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eleve_classes_title_tv"
+        app:layout_constraintVertical_bias="0.123" />
+
+    <TextView
+        android:id="@+id/eleve_form_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/eleve_form_txt"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/eef_nom_ctrl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Nom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nom_tv"
+        app:layout_constraintTop_toBottomOf="@+id/eleve_form_tv" />
+
+    <TextView
+        android:id="@+id/nom_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Nom : "
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/eef_nom_ctrl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eleve_form_tv" />
+
+    <EditText
+        android:id="@+id/eef_prenom_ctrl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Prénom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/prenom_tv"
+        app:layout_constraintTop_toBottomOf="@+id/eef_nom_ctrl" />
+
+    <TextView
+        android:id="@+id/prenom_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Prénom :"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/eef_prenom_ctrl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eef_nom_ctrl" />
+
+    <EditText
+        android:id="@+id/eef_date_naissance_ctrl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Date de naissance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/date_naissance_tv"
+        app:layout_constraintTop_toBottomOf="@+id/eef_prenom_ctrl" />
+
+    <TextView
+        android:id="@+id/date_naissance_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Date de naissance :"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/eef_date_naissance_ctrl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eef_prenom_ctrl" />
+
+    <EditText
+        android:id="@+id/eef_email_ctrl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/email_tv"
+        app:layout_constraintTop_toBottomOf="@+id/eef_date_naissance_ctrl" />
+
+    <TextView
+        android:id="@+id/email_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Email :"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/eef_email_ctrl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eef_date_naissance_ctrl" />
+
+    <EditText
+        android:id="@+id/eef_telephone_ctrl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Téléphone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/telephone_tv"
+        app:layout_constraintTop_toBottomOf="@+id/eef_email_ctrl" />
+
+    <TextView
+        android:id="@+id/telephone_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:text="Téléphone :"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/eef_telephone_ctrl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eef_email_ctrl" />
+
+    <Button
+        android:id="@+id/eef_retour_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/cnam"
+        android:text="Retour"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eef_valider_btn"
+        app:layout_constraintTop_toBottomOf="@+id/eef_telephone_ctrl" />
+
+    <Button
+        android:id="@+id/eef_valider_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/cnam"
+        android:text="Création"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toStartOf="@+id/eef_retour_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eef_telephone_ctrl" />
+
+    <TextView
+        android:id="@+id/eleve_classes_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/eleve_classes_title_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eef_valider_btn" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -55,7 +55,7 @@ public class EleveListActivity2 extends AppCompatActivity {
     }
 
     private void initAddClElBtn() {
-        FloatingActionButton addBtn = findViewById(R.id.floatingActionButton_addItem);
+        FloatingActionButton addBtn = findViewById(R.id.ml_add_btn);
         addBtn.setOnClickListener(v -> {
             Set<Long> selectedEleveIds = EleveListAdapter2.getSelectedEleveIds();
             if (selectedEleveIds.isEmpty()) {
