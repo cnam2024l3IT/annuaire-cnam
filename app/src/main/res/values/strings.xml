@@ -17,4 +17,8 @@
     <string name="acceder_annuaire">Accéder à l\'Annuaire</string>
     <string name="nom_txt">Nom</string>
     <string name="prenom_txt">Prénom</string>
+    <string name="professeur_txt">Professeur</string>
+    <string name="description_txt">Description</string>
+    <string name="valider_txt">Valider</string>
+    <string name="retour_txt">Retour</string>
 </resources>
