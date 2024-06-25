@@ -1,7 +1,6 @@
 package com.example.annuairecnam.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.annuairecnam.R;
-import com.example.annuairecnam.activities.matieres.MatiereDetailActivity;
 import com.example.annuairecnam.models.Matiere;
 
 import java.util.ArrayList;
@@ -68,11 +66,11 @@ public class MatiereListAdapter2 extends RecyclerView.Adapter<MatiereListAdapter
     @Override
     public void onBindViewHolder(@NonNull MatiereListAdapter2.ViewHolder holder, int position) {
         Matiere matiere = matieres.get(position);
-        holder.getLayout().setOnClickListener(v -> {
-            Intent intent = new Intent(context, MatiereDetailActivity.class);
-            intent.putExtra("matiere_id", matiere.get_id());
-            context.startActivity(intent);
-        });
+//        holder.getLayout().setOnClickListener(v -> {
+//            Intent intent = new Intent(context, MatiereDetailActivity.class);
+//            intent.putExtra("matiere_id", matiere.get_id());
+//            context.startActivity(intent);
+//        });
         holder.getIntituleTv().setText(matiere.getIntitule());
         holder.getIntituleTv().setText(matiere.getIntitule());
         holder.getCheckBox().setOnCheckedChangeListener(null);

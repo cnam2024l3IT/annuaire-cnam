@@ -48,7 +48,7 @@ public class ClasseListActivity extends AppCompatActivity {
     private void initAddBtn() {
         FloatingActionButton addBtn = (FloatingActionButton) findViewById(R.id.ml_add_btn);
         addBtn.setOnClickListener(v -> startActivity(new Intent(this, ClasseFormActivity.class)));
-
+        //navigateToList();
     }
 
     private void initListClBtn() {
@@ -79,6 +79,12 @@ public class ClasseListActivity extends AppCompatActivity {
     private void initContext() {
         context = this;
     }
+
+//    private void navigateToList() {
+//        Intent intent = new Intent(ClasseListActivity.this,ClasseListActivity.class);
+//        startActivity(intent);
+//        finish();
+//    }
 
     @Override
     protected void onDestroy() {
