@@ -46,9 +46,8 @@ public class ClasseListActivity extends AppCompatActivity {
 
 
     private void initAddBtn() {
-        FloatingActionButton addBtn = (FloatingActionButton) findViewById(R.id.cl_add_btn);
+        FloatingActionButton addBtn = findViewById(R.id.cl_add_btn);
         addBtn.setOnClickListener(v -> startActivity(new Intent(this, ClasseFormActivity.class)));
-        //navigateToList();
     }
 
     private void initListClBtn() {
