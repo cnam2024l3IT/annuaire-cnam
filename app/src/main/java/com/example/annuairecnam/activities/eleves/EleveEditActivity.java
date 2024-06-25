@@ -57,8 +57,8 @@ public class EleveEditActivity extends AppCompatActivity {
             dateNaissanceCtrl.setText(eleve.getDateNaissance());
             emailCtrl.setText(eleve.getEmail());
             telephoneCtrl.setText(eleve.getTelephone());
-//            listRv.setAdapter(new EleveClasseListAdapter(context, eleve, dbManager.getClassesByEleveId(eleve.get_id())));
-//            listRv.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
+            listRv.setAdapter(new EleveClasseListAdapter(context, eleve, dbManager.getClassesByEleveId(eleve.get_id())));
+            listRv.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
         }
     }
 
