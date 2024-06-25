@@ -103,10 +103,18 @@
                 android:layout_height="wrap_content"
                 android:text="@string/valider_txt" />
 
+            <Button
+                android:id="@+id/eef_supprimer_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Supprimer" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/eef_classes_rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
+
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

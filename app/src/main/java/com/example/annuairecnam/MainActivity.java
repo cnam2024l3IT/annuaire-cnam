@@ -28,15 +28,6 @@ public class MainActivity extends AppCompatActivity {
         });
         startActivity(new Intent(MainActivity.this, ClasseListActivity.class));
 
-        findViewById(R.id.add_btn).setOnClickListener(v -> startActivity(new Intent(this, EleveAddActivity.class)));
-//        findViewById(R.id.edit_btn).setOnClickListener(v -> startActivity(new Intent(this)));
-
-        DbManager dbManager = new DbManager(this).open();
-
-        dbManager.getAllEleves().forEach(e -> Log.d("eleve", "onCreate: " + e.get_id() + " - " + e.getNom() + " "
-                + e.getPrenom() + " - " + e.getDateNaissance() + " - " + e.getEmail() + " - " + e.getTelephone()));
-
-        dbManager.close();
     }
 
 }
