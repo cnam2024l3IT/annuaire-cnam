@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.provider.BaseColumns;
 
 import com.example.annuairecnam.databases.contracts.DataContract;
 import com.example.annuairecnam.databases.helpers.DatabaseHelper;
@@ -17,7 +18,6 @@ import com.example.annuairecnam.models.exceptions.EntityNotFoundException;
 import java.util.ArrayList;
 
 public class DbManager {
-
     private DatabaseHelper dbHelper;
     private final Context context;
     private SQLiteDatabase database;
@@ -41,7 +41,7 @@ public class DbManager {
     }
 
     private Cursor fetchOne(String tableName, String[] columns, long _id) {
-        return database.query(tableName, columns, DataContract.InfoTable._ID + " = " + _id, null, null,
+        return database.query(tableName, columns, BaseColumns._ID + " = " + _id, null, null,
                 null, null);
     }
 
@@ -296,7 +296,7 @@ public class DbManager {
     }
 
     private int update(String tableName, long _id, ContentValues content) {
-        return database.update(tableName, content, DataContract.InfoTable._ID + " = " + _id, null);
+        return database.update(tableName, content, BaseColumns._ID + " = " + _id, null);
     }
 
     /**
@@ -355,7 +355,7 @@ public class DbManager {
     }
 
     private void delete(String tableName, long _id) {
-        database.delete(tableName, DataContract.InfoTable._ID + " = " + _id, null);
+        database.delete(tableName, BaseColumns._ID + " = " + _id, null);
     }
 
     /**

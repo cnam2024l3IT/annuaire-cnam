@@ -9,14 +9,9 @@ import androidx.annotation.Nullable;
 import com.example.annuairecnam.databases.contracts.DataContract;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+    private static final String DB_NAME = "annuaire_cnam.db";
 
-    static final String DB_NAME = "annuaire_cnam.db";
-
-    static final int DB_VERSION = 1;
-
-    public DatabaseHelper(@Nullable Context context, @Nullable SQLiteDatabase.CursorFactory factory) {
-        super(context, DB_NAME, factory, DB_VERSION);
-    }
+    private static final int DB_VERSION = 1;
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -34,12 +29,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(DataContract.SQL_CREATE_NOTE_TABLE);
-        db.execSQL(DataContract.SQL_CREATE_CLASSE_MATIERE_TABLE);
-        db.execSQL(DataContract.SQL_CREATE_CLASSE_ELEVE_TABLE);
-        db.execSQL(DataContract.SQL_CREATE_MATIERE_TABLE);
-        db.execSQL(DataContract.SQL_CREATE_ELEVE_TABLE);
-        db.execSQL(DataContract.SQL_CREATE_CLASSE_TABLE);
+        db.execSQL(DataContract.SQL_DROP_NOTE_TABLE);
+        db.execSQL(DataContract.SQL_DROP_CLASSE_MATIERE_TABLE);
+        db.execSQL(DataContract.SQL_DROP_CLASSE_ELEVE_TABLE);
+        db.execSQL(DataContract.SQL_DROP_MATIERE_TABLE);
+        db.execSQL(DataContract.SQL_DROP_ELEVE_TABLE);
+        db.execSQL(DataContract.SQL_DROP_CLASSE_TABLE);
         onCreate(db);
     }
 
