@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cli_rl"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -28,8 +26,9 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="0dp"
         android:layout_toEndOf="@id/cli_intitule_tv"
-        android:paddingLeft="@dimen/padding_def"
+        android:paddingStart="@dimen/padding_def"
         android:paddingTop="@dimen/padding_def"
+        android:paddingEnd="0dp"
         android:paddingBottom="@dimen/padding_def"
         android:text="@string/promotion_txt"
         android:textAlignment="viewEnd"
