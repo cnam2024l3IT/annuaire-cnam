@@ -94,20 +94,20 @@ public class EleveEditActivity extends AppCompatActivity {
     }
 
     private void initBtns() {
-        validerBtn = findViewById(R.id.eef_valider_btn);
-        supprimerBtn = findViewById(R.id.eef_supprimer_btn);
-        retourBtn = findViewById(R.id.eef_retour_btn);
+        validerBtn = findViewById(R.id.ee_save_btn);
+        supprimerBtn = findViewById(R.id.ee_delete_btn);
+        retourBtn = findViewById(R.id.ee_back_to_list_btn);
     }
 
     private void initListRv() {
-        listRv = findViewById(R.id.eef_classes_rv);
+        listRv = findViewById(R.id.ee_classes_rv);
     }
 
     private void initCtrls() {
-        nomCtrl = findViewById(R.id.eef_nom_ctrl);
-        prenomCtrl = findViewById(R.id.eef_prenom_ctrl);
-        dateNaissanceCtrl = findViewById(R.id.eef_date_naissance_ctrl);
-        emailCtrl = findViewById(R.id.eef_email_ctrl);
+        nomCtrl = findViewById(R.id.ee_nom_ctrl);
+        prenomCtrl = findViewById(R.id.ee_prenom_ctrl);
+        dateNaissanceCtrl = findViewById(R.id.ee_date_naissance_ctrl);
+        emailCtrl = findViewById(R.id.ee_email_ctrl);
         telephoneCtrl = findViewById(R.id.eef_telephone_ctrl);
     }
 
@@ -126,7 +126,7 @@ public class EleveEditActivity extends AppCompatActivity {
 
     private void deleteEleve(View v) {
         dbManager.deleteEleve(eleve.get_id());
-        Toast.makeText(EleveEditActivity.this, "Elève supprimé", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Elève supprimé", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(context, EleveListActivity.class));
     }
 

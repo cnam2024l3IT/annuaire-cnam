@@ -24,17 +24,17 @@ public class MatiereFormActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matiere_form);
 
-        TextView matiereFormTv = findViewById(R.id.matiere_form_tv);
+        TextView matiereFormTv = findViewById(R.id.mf_title_tv);
 
         // Initialisation du gestionnaire de base de données
         dbManager = new DbManager(this).open();
 
         // Récupération des vues
-        intituleEt = findViewById(R.id.intitule_et);
-        descriptionEt = findViewById(R.id.description_et);
-        professeurEt = findViewById(R.id.professeur_et);
-        createBtn = findViewById(R.id.eef_valider_btn);
-        returnBtn = findViewById(R.id.eef_retour_btn);
+        intituleEt = findViewById(R.id.mf_intitule_ctrl);
+        descriptionEt = findViewById(R.id.mf_description_ctrl);
+        professeurEt = findViewById(R.id.mf_professeur_ctrl);
+        createBtn = findViewById(R.id.mf_save_btn);
+        returnBtn = findViewById(R.id.mf_back_to_list_btn);
 
         // Récupération de l'ID de la matière si disponible
         matiereId = getIntent().getLongExtra("matiere_id", -1);

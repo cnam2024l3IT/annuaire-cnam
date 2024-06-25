@@ -8,7 +8,7 @@
     tools:context=".activities.matieres.MatiereListActivity2">
 
     <TextView
-        android:id="@+id/textView_title"
+        android:id="@+id/ml2_title_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_def"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_list"
+        android:id="@+id/ml2_list_rv"
         android:layout_width="388dp"
         android:layout_height="527dp"
         android:layout_marginTop="32dp"
@@ -30,19 +30,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.695"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_title" />
+        app:layout_constraintTop_toBottomOf="@+id/ml2_title_tv" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/ml_add_btn"
+        android:id="@+id/ml2_add_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
         app:backgroundTint="#FFA0A0"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_title"
+        app:layout_constraintBottom_toBottomOf="@+id/ml2_title_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView_title"
+        app:layout_constraintTop_toTopOf="@+id/ml2_title_tv"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 

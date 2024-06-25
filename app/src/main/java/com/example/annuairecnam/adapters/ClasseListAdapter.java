@@ -31,9 +31,9 @@ public class ClasseListAdapter  extends RecyclerView.Adapter<ClasseListAdapter.V
 
         public ViewHolder(View view) {
             super(view);
-            layout = view.findViewById(R.id.classe_list_item_rl);
-            intituleTv = view.findViewById(R.id.mli_intitule_tv);
-            promotionTv = view.findViewById(R.id.mli_promotion_tv);
+            layout = view.findViewById(R.id.cli_rl);
+            intituleTv = view.findViewById(R.id.cli_intitule_tv);
+            promotionTv = view.findViewById(R.id.cli_promotion_tv);
         }
 
         public RelativeLayout getLayout() {

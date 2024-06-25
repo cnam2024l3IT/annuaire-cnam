@@ -42,21 +42,21 @@ public class EleveListActivity extends AppCompatActivity {
     }
     
     private void initAddBtn() {
-        FloatingActionButton addBtn = findViewById(R.id.ml_add_btn);
+        FloatingActionButton addBtn = findViewById(R.id.el_add_btn);
         addBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveAddActivity.class)));
     }
 
     private void initNavBtns() {
-        Button classesBtn = findViewById(R.id.ml_classe_btn);
+        Button classesBtn = findViewById(R.id.el_classes_btn);
         classesBtn.setOnClickListener(v -> startActivity(new Intent(context, ClasseListActivity.class)));
-        Button matieresBtn = findViewById(R.id.ml_matiere_btn);
+        Button matieresBtn = findViewById(R.id.el_matieres_btn);
         matieresBtn.setOnClickListener(v -> startActivity(new Intent(context, MatiereListActivity.class)));
-        Button elevesBtn = findViewById(R.id.ml_eleve_btn);
+        Button elevesBtn = findViewById(R.id.el_eleves_btn);
         elevesBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveListActivity.class)));
     }
 
     private void initListRv() {
-        RecyclerView listRv = findViewById(R.id.eleve_list_rv);
+        RecyclerView listRv = findViewById(R.id.el_list_rv);
         listRv.setAdapter(new EleveListAdapter(context, dbManager.getAllEleves()));
         listRv.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }

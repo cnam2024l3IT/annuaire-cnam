@@ -26,12 +26,12 @@ public class MatiereDetailActivity extends AppCompatActivity {
 
         dbManager = new DbManager(this).open();
 
-        intituleEt = findViewById(R.id.intitule_et);
-        descriptionEt = findViewById(R.id.description_et);
-        professeurEt = findViewById(R.id.professeur_et);
-        updateBtn = findViewById(R.id.update_btn);
-        deleteBtn = findViewById(R.id.delete_btn);
-        returnBtn = findViewById(R.id.eef_retour_btn);
+        intituleEt = findViewById(R.id.md_intitule_ctrl);
+        descriptionEt = findViewById(R.id.md_description_ctrl);
+        professeurEt = findViewById(R.id.md_professeur_ctrl);
+        updateBtn = findViewById(R.id.md_save_btn);
+        deleteBtn = findViewById(R.id.md_delete_btn);
+        returnBtn = findViewById(R.id.md_back_to_list_btn);
 
         matiereId = getIntent().getLongExtra("matiere_id", -1);
 

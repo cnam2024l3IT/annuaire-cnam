@@ -28,8 +28,8 @@ public class EleveListAdapter extends RecyclerView.Adapter<EleveListAdapter.View
 
         public ViewHolder(View view) {
             super(view);
-            layout = view.findViewById(R.id.eleve_list_item_rl);
-            intituleTv = view.findViewById(R.id.mli_intitule_tv);
+            layout = view.findViewById(R.id.eli_rl);
+            intituleTv = view.findViewById(R.id.eli_intitule_tv);
 
         }
         public RelativeLayout getLayout() {

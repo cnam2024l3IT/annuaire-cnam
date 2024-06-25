@@ -32,10 +32,10 @@ public class EleveListAdapter2 extends RecyclerView.Adapter<EleveListAdapter2.Vi
 
         public ViewHolder(View view) {
             super(view);
-            layout = view.findViewById(R.id.eleve_list2_item_rl);
-            intituleTv = view.findViewById(R.id.mli_intitule_tv);
-            prenomTv = view.findViewById(R.id.mli_prenom_tv);
-            checkBox = view.findViewById(R.id.eleve_checkbox);
+            layout = view.findViewById(R.id.eli2_rl);
+            intituleTv = view.findViewById(R.id.eli2_nom_tv);
+            prenomTv = view.findViewById(R.id.eli2_prenom_tv);
+            checkBox = view.findViewById(R.id.eli2_checkbox);
         }
 
         public RelativeLayout getLayout() {

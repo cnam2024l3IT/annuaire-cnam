@@ -8,7 +8,7 @@
     tools:context=".activities.eleves.EleveAddActivity">
 
     <TextView
-        android:id="@+id/eleve_form_tv"
+        android:id="@+id/ea_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -20,19 +20,19 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/nom_tv"
+        android:id="@+id/ea_nom_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="100dp"
         android:text="Nom : "
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/eaf_nom_ctrl"
+        app:layout_constraintEnd_toStartOf="@+id/ea_nom_ctrl"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eleve_form_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/ea_title_tv" />
 
     <EditText
-        android:id="@+id/eaf_nom_ctrl"
+        android:id="@+id/ea_nom_ctrl"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -40,23 +40,23 @@
         android:layout_marginEnd="16dp"
         android:hint="Nom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/nom_tv"
-        app:layout_constraintTop_toBottomOf="@+id/eleve_form_tv" />
+        app:layout_constraintStart_toEndOf="@+id/ea_nom_tv"
+        app:layout_constraintTop_toBottomOf="@+id/ea_title_tv" />
 
     <TextView
-        android:id="@+id/prenom_tv"
+        android:id="@+id/ea_prenom_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
         android:text="Prénom :"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/eaf_prenom_ctrl"
+        app:layout_constraintEnd_toStartOf="@+id/ea_prenom_ctrl"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eaf_nom_ctrl" />
+        app:layout_constraintTop_toBottomOf="@+id/ea_nom_ctrl" />
 
     <EditText
-        android:id="@+id/eaf_prenom_ctrl"
+        android:id="@+id/ea_prenom_ctrl"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -64,23 +64,23 @@
         android:layout_marginEnd="16dp"
         android:hint="Prénom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/prenom_tv"
-        app:layout_constraintTop_toBottomOf="@+id/eaf_nom_ctrl" />
+        app:layout_constraintStart_toEndOf="@+id/ea_prenom_tv"
+        app:layout_constraintTop_toBottomOf="@+id/ea_nom_ctrl" />
 
     <TextView
-        android:id="@+id/date_naissance_tv"
+        android:id="@+id/ea_date_naissance_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="52dp"
         android:text="Date de naissance :"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/eaf_date_naissance_ctrl"
+        app:layout_constraintEnd_toStartOf="@+id/ea_date_naissance_ctrl"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eaf_prenom_ctrl" />
+        app:layout_constraintTop_toBottomOf="@+id/ea_prenom_ctrl" />
 
     <EditText
-        android:id="@+id/eaf_date_naissance_ctrl"
+        android:id="@+id/ea_date_naissance_ctrl"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -88,23 +88,23 @@
         android:layout_marginEnd="16dp"
         android:hint="Date de naissance"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/date_naissance_tv"
-        app:layout_constraintTop_toBottomOf="@+id/eaf_prenom_ctrl" />
+        app:layout_constraintStart_toEndOf="@+id/ea_date_naissance_tv"
+        app:layout_constraintTop_toBottomOf="@+id/ea_prenom_ctrl" />
 
     <TextView
-        android:id="@+id/email_tv"
+        android:id="@+id/ea_email_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
         android:text="Email :"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/eaf_email_ctrl"
+        app:layout_constraintEnd_toStartOf="@+id/ea_email_ctrl"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eaf_date_naissance_ctrl" />
+        app:layout_constraintTop_toBottomOf="@+id/ea_date_naissance_ctrl" />
 
     <EditText
-        android:id="@+id/eaf_email_ctrl"
+        android:id="@+id/ea_email_ctrl"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -112,23 +112,23 @@
         android:layout_marginEnd="16dp"
         android:hint="Email"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/email_tv"
-        app:layout_constraintTop_toBottomOf="@+id/eaf_date_naissance_ctrl" />
+        app:layout_constraintStart_toEndOf="@+id/ea_email_tv"
+        app:layout_constraintTop_toBottomOf="@+id/ea_date_naissance_ctrl" />
 
     <TextView
-        android:id="@+id/telephone_tv"
+        android:id="@+id/ea_telephone_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="52dp"
         android:text="Téléphone :"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/eaf_telephone_ctrl"
+        app:layout_constraintEnd_toStartOf="@+id/ea_telephone_ctrl"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eaf_email_ctrl" />
+        app:layout_constraintTop_toBottomOf="@+id/ea_email_ctrl" />
 
     <EditText
-        android:id="@+id/eaf_telephone_ctrl"
+        android:id="@+id/ea_telephone_ctrl"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -136,11 +136,11 @@
         android:layout_marginEnd="16dp"
         android:hint="Téléphone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/telephone_tv"
-        app:layout_constraintTop_toBottomOf="@+id/eaf_email_ctrl" />
+        app:layout_constraintStart_toEndOf="@+id/ea_telephone_tv"
+        app:layout_constraintTop_toBottomOf="@+id/ea_email_ctrl" />
 
     <Button
-        android:id="@+id/eaf_valider_btn"
+        android:id="@+id/ea_save_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -149,12 +149,12 @@
         android:backgroundTint="@color/cnam"
         android:text="Création"
         android:textColor="@android:color/white"
-        app:layout_constraintEnd_toStartOf="@+id/eaf_retour_btn"
+        app:layout_constraintEnd_toStartOf="@+id/ea_back_to_list_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eaf_telephone_ctrl" />
+        app:layout_constraintTop_toBottomOf="@+id/ea_telephone_ctrl" />
 
     <Button
-        android:id="@+id/eaf_retour_btn"
+        android:id="@+id/ea_back_to_list_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -164,7 +164,7 @@
         android:text="Retour"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/eaf_valider_btn"
-        app:layout_constraintTop_toBottomOf="@+id/eaf_telephone_ctrl" />
+        app:layout_constraintStart_toEndOf="@+id/ea_save_btn"
+        app:layout_constraintTop_toBottomOf="@+id/ea_telephone_ctrl" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

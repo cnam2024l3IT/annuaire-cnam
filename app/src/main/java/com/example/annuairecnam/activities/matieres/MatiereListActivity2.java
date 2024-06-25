@@ -49,7 +49,7 @@ public class MatiereListActivity2 extends AppCompatActivity {
         initDbManager();
 
         // Initialiser les boutons
-        addBtn = findViewById(R.id.ml_add_btn);
+        addBtn = findViewById(R.id.ml2_add_btn);
 
         // Récupération du classeId depuis l'intent
         classeId = getIntent().getLongExtra("CLASSE_ID", -1);
@@ -64,7 +64,7 @@ public class MatiereListActivity2 extends AppCompatActivity {
 
 
     private void initAddClMatBtn() {
-        FloatingActionButton addBtn = findViewById(R.id.ml_add_btn);
+        FloatingActionButton addBtn = findViewById(R.id.ml2_add_btn);
         addBtn.setOnClickListener(v -> {
             Set<Long> selectedMatiereIds = MatiereListAdapter2.getSelectedMatiereIds();
             if (selectedMatiereIds.isEmpty()) {
@@ -90,7 +90,7 @@ public class MatiereListActivity2 extends AppCompatActivity {
 
 
     private void initListRc() {
-        RecyclerView listRc = findViewById(R.id.recyclerView_list);
+        RecyclerView listRc = findViewById(R.id.ml2_list_rv);
 
         List<Matiere> matieres = dbManager.getMatieresByNotInClasseId(classeId);
         MatiereListAdapter2 = new MatiereListAdapter2(context, dbManager.getMatieresByNotInClasseId(classeId));

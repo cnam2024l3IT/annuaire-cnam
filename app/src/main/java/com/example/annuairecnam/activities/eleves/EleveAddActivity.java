@@ -42,8 +42,8 @@ public class EleveAddActivity extends AppCompatActivity {
     }
 
     private void initBtns() {
-        validerBtn = findViewById(R.id.eaf_valider_btn);
-        retourBtn = findViewById(R.id.eaf_retour_btn);
+        validerBtn = findViewById(R.id.ea_save_btn);
+        retourBtn = findViewById(R.id.ea_back_to_list_btn);
     }
 
     private void assignBtnsEvents() {
@@ -59,11 +59,11 @@ public class EleveAddActivity extends AppCompatActivity {
     }
 
     private void initCtrls() {
-        nomCtrl = findViewById(R.id.eaf_nom_ctrl);
-        prenomCtrl = findViewById(R.id.eaf_prenom_ctrl);
-        dateNaissanceCtrl = findViewById(R.id.eaf_date_naissance_ctrl);
-        emailCtrl = findViewById(R.id.eaf_email_ctrl);
-        telephoneCtrl = findViewById(R.id.eaf_telephone_ctrl);
+        nomCtrl = findViewById(R.id.ea_nom_ctrl);
+        prenomCtrl = findViewById(R.id.ea_prenom_ctrl);
+        dateNaissanceCtrl = findViewById(R.id.ea_date_naissance_ctrl);
+        emailCtrl = findViewById(R.id.ea_email_ctrl);
+        telephoneCtrl = findViewById(R.id.ea_telephone_ctrl);
     }
 
     private void initContext() {
