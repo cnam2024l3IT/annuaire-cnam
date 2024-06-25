@@ -21,4 +21,7 @@
     <string name="description_txt">Description</string>
     <string name="valider_txt">Valider</string>
     <string name="retour_txt">Retour</string>
+    <string name="classe_txt">Classe</string>
+    <string name="eleves_txt">Elèves</string>
+    <string name="matieres_txt">Matières</string>
 </resources>
