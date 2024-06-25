@@ -12,4 +12,5 @@
     <string name="titre_list">Liste:</string>
     <string name="matiere_detail_txt">Détail Matière</string>
     <string name="classe_detail_txt">Détail Classe</string>
+    <string name="acceder_annuaire">Accéder à l\'Annuaire</string>
 </resources>
