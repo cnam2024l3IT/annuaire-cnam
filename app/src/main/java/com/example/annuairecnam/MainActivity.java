@@ -26,12 +26,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         Button button = findViewById(R.id.m_classes_btn);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ClasseListActivity.class);
-                startActivity(intent);
-            }
+        button.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ClasseListActivity.class);
+            startActivity(intent);
         });
     }
 
