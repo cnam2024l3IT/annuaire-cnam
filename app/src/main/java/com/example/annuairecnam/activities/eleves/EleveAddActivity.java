@@ -48,10 +48,7 @@ public class EleveAddActivity extends AppCompatActivity {
 
     private void assignBtnsEvents() {
         validerBtn.setOnClickListener(this::saveEleve);
-
-        retourBtn.setOnClickListener(v -> {
-            startActivity(new Intent(context, EleveListActivity.class));
-        });
+        retourBtn.setOnClickListener(this::goToList);
     }
 
     private void initDbManager() {
@@ -80,6 +77,10 @@ public class EleveAddActivity extends AppCompatActivity {
         Eleve eleve = new Eleve(nomCtrl.getText().toString(), prenomCtrl.getText().toString(),
                 dateNaissanceCtrl.getText().toString(), emailCtrl.getText().toString(), telephoneCtrl.getText().toString());
         dbManager.insertEleve(eleve);
+        goToList(v);
+    }
+
+    private void goToList(View v) {
         startActivity(new Intent(context, EleveListActivity.class));
     }
 }
