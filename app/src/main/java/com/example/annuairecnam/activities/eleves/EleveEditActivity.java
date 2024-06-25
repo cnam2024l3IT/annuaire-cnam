@@ -24,7 +24,7 @@ public class EleveEditActivity extends AppCompatActivity {
     private DbManager dbManager;
     private EditText nomCtrl, prenomCtrl, dateNaissanceCtrl, emailCtrl, telephoneCtrl;
     private RecyclerView listRv;
-    private Button validerBtn;
+    private Button validerBtn, supprimerBtn;
     private Eleve eleve;
 
     @Override
@@ -49,6 +49,8 @@ public class EleveEditActivity extends AppCompatActivity {
 
 
         validerBtn = findViewById(R.id.eef_valider_btn);
+        supprimerBtn = findViewById(R.id.eef_supprimer_btn);
+
 
         dbManager = new DbManager(context).open();
         if(getIntent().hasExtra(String.valueOf(R.string.eleve_tag))) {
@@ -69,6 +71,12 @@ public class EleveEditActivity extends AppCompatActivity {
 //                        dateNaissanceCtrl.getText().toString(), emailCtrl.getText().toString(), telephoneCtrl.getText().toString());
                 dbManager.updateEleve(eleve.get_id(), eleve);
             }
+        });
+
+        supprimerBtn.setOnClickListener(v -> {
+            dbManager.deleteEleve(eleve.get_id());
+            Toast.makeText(EleveEditActivity.this, "Elève supprimé", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(context, EleveListActivity.class));
         });
     }
 

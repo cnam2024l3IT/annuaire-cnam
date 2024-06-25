@@ -40,7 +40,6 @@ public class EleveListActivity extends AppCompatActivity {
         initAddBtn();
         initNavBtns();
     }
-
     private void initAddBtn() {
         FloatingActionButton addBtn = findViewById(R.id.ml_add_btn);
         addBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveAddActivity.class)));
@@ -60,6 +59,7 @@ public class EleveListActivity extends AppCompatActivity {
         listRv.setAdapter(new EleveListAdapter(context, dbManager.getAllEleves()));
         listRv.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }
+
 
     private void initDbManager() {
         dbManager = new DbManager(context).open();
