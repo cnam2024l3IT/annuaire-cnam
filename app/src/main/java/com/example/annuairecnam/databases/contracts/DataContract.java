@@ -110,7 +110,7 @@ public class DataContract {
             " as x WHERE x."+ClasseEleveTable.CLASSE_ID + "= ? "+
             " AND x."+ ClasseEleveTable.ELEVE_ID + " = " + EleveTable.TABLE_NAME + "." + EleveTable._ID+")";
 
-
+//
     public static final String SQL_MATIERES_NOIN_CLASSE_ID = "SELECT " + MatiereTable.TABLE_NAME + "." + MatiereTable._ID + ", "
             + MatiereTable.INTITULE +  " FROM " + MatiereTable.TABLE_NAME
             + " WHERE NOT EXISTS (SELECT NULL FROM "+ ClasseMatiereTable.TABLE_NAME +
