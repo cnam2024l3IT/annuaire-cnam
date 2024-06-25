@@ -25,4 +25,7 @@
     <string name="eleves_txt">Elèves</string>
     <string name="matieres_txt">Matières</string>
     <string name="logo_txt">logo Cnam</string>
+    <string name="date_naissance_txt">Date de naissance</string>
+    <string name="email_txt">Email</string>
+    <string name="telephone_txt">Téléphone</string>
 </resources>
