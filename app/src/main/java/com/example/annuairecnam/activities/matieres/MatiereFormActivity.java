@@ -15,7 +15,6 @@ import com.example.annuairecnam.models.Matiere;
 
 public class MatiereFormActivity extends AppCompatActivity {
     private EditText intituleEt, descriptionEt, professeurEt;
-    private Button createBtn, returnBtn;
     private DbManager dbManager;
     private long matiereId;
 
@@ -33,8 +32,8 @@ public class MatiereFormActivity extends AppCompatActivity {
         intituleEt = findViewById(R.id.mf_intitule_ctrl);
         descriptionEt = findViewById(R.id.mf_description_ctrl);
         professeurEt = findViewById(R.id.mf_professeur_ctrl);
-        createBtn = findViewById(R.id.mf_save_btn);
-        returnBtn = findViewById(R.id.mf_back_to_list_btn);
+        Button createBtn = findViewById(R.id.mf_save_btn);
+        Button returnBtn = findViewById(R.id.mf_back_to_list_btn);
 
         // Récupération de l'ID de la matière si disponible
         matiereId = getIntent().getLongExtra("matiere_id", -1);
@@ -71,7 +70,6 @@ public class MatiereFormActivity extends AppCompatActivity {
                 professeurEt.setText(matiereExistante.getProfesseur());
 
                 // OnClickListener pour le bouton de mise à jour
-                createBtn.setText("Mettre à jour");
                 createBtn.setOnClickListener(v -> {
                     matiereExistante.setIntitule(intituleEt.getText().toString());
                     matiereExistante.setDescription(descriptionEt.getText().toString());
@@ -91,9 +89,7 @@ public class MatiereFormActivity extends AppCompatActivity {
                 navigateToList();
             }
         }
-        returnBtn.setOnClickListener(v -> {
-            navigateToList();
-        });
+        returnBtn.setOnClickListener(v -> navigateToList());
     }
 
     // Méthode pour naviguer vers la liste des matières (MatiereListActivity)
