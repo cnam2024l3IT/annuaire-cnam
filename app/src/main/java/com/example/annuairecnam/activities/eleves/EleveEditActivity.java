@@ -1,9 +1,11 @@
 package com.example.annuairecnam.activities.eleves;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.annuairecnam.R;
+import com.example.annuairecnam.activities.matieres.MatiereDetailActivity;
 import com.example.annuairecnam.adapters.EleveClasseListAdapter;
 import com.example.annuairecnam.databases.DbManager;
 import com.example.annuairecnam.models.Eleve;
@@ -23,7 +26,7 @@ public class EleveEditActivity extends AppCompatActivity {
     private DbManager dbManager;
     private EditText nomCtrl, prenomCtrl, dateNaissanceCtrl, emailCtrl, telephoneCtrl;
     private RecyclerView listRv;
-    private Button validerBtn;
+    private Button validerBtn, supprimerBtn;
     private Eleve eleve;
 
     @Override
@@ -46,8 +49,9 @@ public class EleveEditActivity extends AppCompatActivity {
         telephoneCtrl = findViewById(R.id.eef_telephone_ctrl);
         listRv = findViewById(R.id.eef_classes_rv);
 
-
         validerBtn = findViewById(R.id.eef_valider_btn);
+        supprimerBtn = findViewById(R.id.eef_supprimer_btn);
+
 
         dbManager = new DbManager(context).open();
         if(getIntent().hasExtra(String.valueOf(R.string.eleve_tag))) {
@@ -60,7 +64,14 @@ public class EleveEditActivity extends AppCompatActivity {
 //            listRv.setAdapter(new EleveClasseListAdapter(context, eleve, dbManager.getClassesByEleveId(eleve.get_id())));
 //            listRv.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
         }
+
+        supprimerBtn.setOnClickListener(v -> {
+            dbManager.deleteEleve(eleve.get_id());
+            Toast.makeText(EleveEditActivity.this, "Elève supprimé", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(context, EleveListActivity.class));
+        });
     }
+
 
     @Override
     protected void onDestroy() {
