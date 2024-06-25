@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_marginEnd="0dp"
         android:paddingTop="@dimen/padding_def"
         android:paddingBottom="@dimen/padding_def"
         android:text="@string/nom_txt"
@@ -38,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="@dimen/margin_def" />
+        android:layout_marginStart="144dp"
+        android:layout_toEndOf="@+id/eli2_prenom_tv" />
 
 </RelativeLayout>
