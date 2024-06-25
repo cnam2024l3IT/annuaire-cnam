@@ -5,14 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.classes.ClasseListActivity">
+    tools:context=".activities.matieres.MatiereListActivity">
 
     <TextView
         android:id="@+id/ml_title_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_def"
-        android:text="@string/titre_list"
+        android:text="@string/titre_listMatiere"
         android:textSize="@dimen/titlesize_def"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
