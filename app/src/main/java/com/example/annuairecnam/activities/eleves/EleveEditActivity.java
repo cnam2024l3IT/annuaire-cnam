@@ -59,9 +59,7 @@ public class EleveEditActivity extends AppCompatActivity {
         validerBtn.setOnClickListener(this::saveEleve);
         supprimerBtn.setOnClickListener(this::deleteEleve);
 
-        retourBtn.setOnClickListener(v -> {
-            startActivity(new Intent(context, EleveListActivity.class));
-        });
+        retourBtn.setOnClickListener(v -> startActivity(new Intent(context, EleveListActivity.class)));
     }
 
     private void assignEleve() {
