@@ -2,6 +2,7 @@ package com.example.annuairecnam.activities.matieres;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,7 +15,6 @@ import com.example.annuairecnam.models.Matiere;
 
 public class MatiereDetailActivity extends AppCompatActivity {
     private EditText intituleEt, descriptionEt, professeurEt;
-    private Button updateBtn, deleteBtn, returnBtn;
     private DbManager dbManager;
     private Matiere matiere;
     private long matiereId;
@@ -29,9 +29,9 @@ public class MatiereDetailActivity extends AppCompatActivity {
         intituleEt = findViewById(R.id.md_intitule_ctrl);
         descriptionEt = findViewById(R.id.md_description_ctrl);
         professeurEt = findViewById(R.id.md_professeur_ctrl);
-        updateBtn = findViewById(R.id.md_save_btn);
-        deleteBtn = findViewById(R.id.md_delete_btn);
-        returnBtn = findViewById(R.id.md_back_to_list_btn);
+        Button updateBtn = findViewById(R.id.md_save_btn);
+        Button deleteBtn = findViewById(R.id.md_delete_btn);
+        Button returnBtn = findViewById(R.id.md_back_to_list_btn);
 
         matiereId = getIntent().getLongExtra("matiere_id", -1);
 
@@ -51,18 +51,16 @@ public class MatiereDetailActivity extends AppCompatActivity {
 
             dbManager.updateMatiere(matiereId, matiere);
             Toast.makeText(MatiereDetailActivity.this, "Matière mise à jour", Toast.LENGTH_SHORT).show();
-            navigateToList();
+            navigateToList(v);
         });
 
         deleteBtn.setOnClickListener(v -> {
             dbManager.deleteMatiere(matiereId);
             Toast.makeText(MatiereDetailActivity.this, "Matière supprimée", Toast.LENGTH_SHORT).show();
-            navigateToList();
+            navigateToList(v);
         });
 
-        returnBtn.setOnClickListener(v -> {
-            navigateToList();
-        });
+        returnBtn.setOnClickListener(this::navigateToList);
     }
 
     private void navigateToList() {
@@ -75,5 +73,9 @@ public class MatiereDetailActivity extends AppCompatActivity {
     protected void onDestroy() {
         dbManager.close();
         super.onDestroy();
+    }
+
+    private void navigateToList(View v) {
+        navigateToList();
     }
 }
