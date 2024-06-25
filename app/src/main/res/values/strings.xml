@@ -6,10 +6,13 @@
     <string name="matiere_form_txt">Matièreform</string>
     <string name="eleve_form_txt">Elèveform</string>
     <string name="add_txt">Ajouter</string>
-    <string name="classe_tag">classe</string>
-    <string name="matiere_tag">matiere</string>
-    <string name="eleve_tag">éleve</string>
+    <string name="classe_tag">Classes</string>
+    <string name="matiere_tag">Matières</string>
+    <string name="eleve_tag">Elèves</string>
     <string name="titre_list">Liste:</string>
+    <string name="titre_listClasse">Liste des Classes:</string>
+    <string name="titre_listMatiere">Liste des Matières:</string>
+    <string name="titre_listEleve">Liste des Elèves:</string>
     <string name="matiere_detail_txt">Détail Matière</string>
     <string name="classe_detail_txt">Détail Classe</string>
     <string name="eleve_classes_title_txt">Classes</string>
