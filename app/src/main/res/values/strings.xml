@@ -14,4 +14,5 @@
     <string name="classe_detail_txt">Détail Classe</string>
     <string name="eleve_classes_title_txt">Classes</string>
     <string name="supprimer_txt">Supprimer</string>
+    <string name="acceder_annuaire">Accéder à l\'Annuaire</string>
 </resources>

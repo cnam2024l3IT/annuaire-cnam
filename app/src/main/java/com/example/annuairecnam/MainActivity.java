@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.annuairecnam.activities.classes.ClasseListActivity;
 
@@ -23,7 +25,15 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        startActivity(new Intent(MainActivity.this, ClasseListActivity.class));
+        // startActivity(new Intent(MainActivity.this, ClasseListActivity.class));
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ClasseListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }
