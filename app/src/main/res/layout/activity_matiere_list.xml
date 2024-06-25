@@ -39,6 +39,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+        android:contentDescription="@string/add_txt"
+        android:focusable="true"
         app:backgroundTint="#FFA0A0"
         app:layout_constraintBottom_toBottomOf="@+id/ml_title_tv"
         app:layout_constraintEnd_toEndOf="parent"
