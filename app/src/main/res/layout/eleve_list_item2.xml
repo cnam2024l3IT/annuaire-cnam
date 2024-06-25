@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/eli2_rl"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -16,7 +14,7 @@
         android:layout_marginEnd="0dp"
         android:paddingTop="@dimen/padding_def"
         android:paddingBottom="@dimen/padding_def"
-        android:text="Nom"
+        android:text="@string/nom_txt"
         android:textAlignment="viewStart"
         android:textSize="@dimen/textsize_def"
         android:textStyle="bold" />
@@ -30,7 +28,7 @@
         android:layout_marginEnd="0dp"
         android:paddingTop="@dimen/padding_def"
         android:paddingBottom="@dimen/padding_def"
-        android:text="Prénom"
+        android:text="@string/prenom_txt"
         android:textAlignment="viewStart"
         android:textSize="@dimen/textsize_def"
         android:textStyle="bold" />

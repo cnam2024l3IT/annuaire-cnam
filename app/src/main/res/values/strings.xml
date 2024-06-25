@@ -15,4 +15,6 @@
     <string name="eleve_classes_title_txt">Classes</string>
     <string name="supprimer_txt">Supprimer</string>
     <string name="acceder_annuaire">Accéder à l\'Annuaire</string>
+    <string name="nom_txt">Nom</string>
+    <string name="prenom_txt">Prénom</string>
 </resources>
