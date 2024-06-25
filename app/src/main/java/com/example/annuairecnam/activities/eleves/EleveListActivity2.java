@@ -1,6 +1,7 @@
 package com.example.annuairecnam.activities.eleves;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -14,10 +15,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.annuairecnam.R;
+import com.example.annuairecnam.activities.classes.ClasseDetailActivity;
 import com.example.annuairecnam.adapters.EleveListAdapter2;
 import com.example.annuairecnam.databases.DbManager;
+import com.example.annuairecnam.models.Eleve;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.List;
 import java.util.Set;
 
 public class EleveListActivity2 extends AppCompatActivity {
@@ -63,6 +67,7 @@ public class EleveListActivity2 extends AppCompatActivity {
                         .setPositiveButton(android.R.string.yes, (dialog, which) -> {
                             for (Long eleveId : selectedEleveIds) {
                                 dbManager.insertClasseEleve(classeId, eleveId);
+                                navigateToList();
                             }
                             Toast.makeText(EleveListActivity2.this, "Élèves ajoutés", Toast.LENGTH_SHORT).show();
                         })
@@ -77,9 +82,16 @@ public class EleveListActivity2 extends AppCompatActivity {
 
     private void initListRc() {
         RecyclerView listRc = findViewById(R.id.recyclerView_list2);
+        List<Eleve> eleves = dbManager.getElevesByNotInClasseId(classeId);
+
         EleveListAdapter2 = new EleveListAdapter2(context, dbManager.getElevesByNotInClasseId(classeId));
         listRc.setAdapter(EleveListAdapter2);
         listRc.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
+
+        if (eleves.isEmpty()) {
+            Toast.makeText(context, "Aucun élève ne peut être rajouter", Toast.LENGTH_SHORT).show();
+            navigateToList();
+        }
     }
 
     private void initDbManager() {
@@ -88,6 +100,12 @@ public class EleveListActivity2 extends AppCompatActivity {
 
     private void initContext() {
         context = this;
+    }
+
+    private void navigateToList() {
+        Intent intent = new Intent(EleveListActivity2.this, ClasseDetailActivity.class);
+        intent.putExtra("CLASSE_ID", classeId);
+        startActivity(intent);
     }
 
     @Override
