@@ -25,13 +25,10 @@ import java.util.List;
 import java.util.Set;
 
 public class MatiereListActivity2 extends AppCompatActivity {
-
     private Context context;
     private DbManager dbManager;
     private long classeId;
     private MatiereListAdapter2 MatiereListAdapter2;
-
-    private FloatingActionButton addBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +44,6 @@ public class MatiereListActivity2 extends AppCompatActivity {
         // Initialisation du contexte et du DbManager
         initContext();
         initDbManager();
-
-        // Initialiser les boutons
-        addBtn = findViewById(R.id.ml2_add_btn);
 
         // Récupération du classeId depuis l'intent
         classeId = getIntent().getLongExtra("CLASSE_ID", -1);
