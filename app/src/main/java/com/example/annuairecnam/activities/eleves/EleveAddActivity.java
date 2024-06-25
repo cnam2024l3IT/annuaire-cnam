@@ -33,19 +33,36 @@ public class EleveAddActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        context = this;
+        initContext();
+        initCtrls();
+        initBtns();
+        initDbManager();
+        assignBtnsEvents();
 
+    }
+
+    private void initBtns() {
+        validerBtn = findViewById(R.id.eaf_valider_btn);
+    }
+
+    private void assignBtnsEvents() {
+        validerBtn.setOnClickListener(this::saveEleve);
+    }
+
+    private void initDbManager() {
+        dbManager = new DbManager(context).open();
+    }
+
+    private void initCtrls() {
         nomCtrl = findViewById(R.id.eaf_nom_ctrl);
         prenomCtrl = findViewById(R.id.eaf_prenom_ctrl);
         dateNaissanceCtrl = findViewById(R.id.eaf_date_naissance_ctrl);
         emailCtrl = findViewById(R.id.eaf_email_ctrl);
         telephoneCtrl = findViewById(R.id.eaf_telephone_ctrl);
-        validerBtn = findViewById(R.id.eaf_valider_btn);
+    }
 
-        dbManager = new DbManager(context).open();
-
-        validerBtn.setOnClickListener(this::saveEleve);
-
+    private void initContext() {
+        context = this;
     }
 
     @Override
