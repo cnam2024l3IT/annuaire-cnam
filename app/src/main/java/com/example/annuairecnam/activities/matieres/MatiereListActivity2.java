@@ -93,7 +93,7 @@ public class MatiereListActivity2 extends AppCompatActivity {
         RecyclerView listRc = findViewById(R.id.ml2_list_rv);
 
         List<Matiere> matieres = dbManager.getMatieresByNotInClasseId(classeId);
-        MatiereListAdapter2 = new MatiereListAdapter2(context, dbManager.getMatieresByNotInClasseId(classeId));
+        MatiereListAdapter2 = new MatiereListAdapter2(dbManager.getMatieresByNotInClasseId(classeId));
         listRc.setAdapter(MatiereListAdapter2);
         listRc.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
 

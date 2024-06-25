@@ -161,7 +161,7 @@ public class ClasseDetailActivity extends AppCompatActivity {
 
     private void initListMat() {
         RecyclerView listMat = findViewById(R.id.cd_matieres_rv);
-        matiereListAdapter2 = new MatiereListAdapter2(context, dbManager.getMatieresByClasseId(classeId));
+        matiereListAdapter2 = new MatiereListAdapter2(dbManager.getMatieresByClasseId(classeId));
         listMat.setAdapter(matiereListAdapter2);
         listMat.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }
