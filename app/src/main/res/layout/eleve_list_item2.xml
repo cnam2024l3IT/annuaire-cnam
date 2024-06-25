@@ -1,37 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/eli2_rl"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="@dimen/padding_def"
-    android:paddingEnd="@dimen/padding_def">
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
 
     <TextView
         android:id="@+id/eli2_nom_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginEnd="0dp"
-        android:paddingTop="@dimen/padding_def"
-        android:paddingBottom="@dimen/padding_def"
-        android:text="@string/nom_txt"
+        android:layout_marginEnd="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="Nom"
         android:textAlignment="viewStart"
-        android:textSize="@dimen/textsize_def"
-        android:textStyle="bold" />
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true" />
 
     <TextView
         android:id="@+id/eli2_prenom_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_def"
-        android:layout_toStartOf="@+id/eli2_checkbox"
+        android:layout_marginStart="8dp"
         android:layout_toEndOf="@+id/eli2_nom_tv"
-        android:paddingTop="@dimen/padding_def"
-        android:paddingBottom="@dimen/padding_def"
-        android:text="@string/prenom_txt"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="Prénom"
         android:textAlignment="viewStart"
-        android:textSize="@dimen/textsize_def"
-        android:textStyle="bold" />
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:maxLines="2" />
 
     <CheckBox
         android:id="@+id/eli2_checkbox"
@@ -39,7 +41,5 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="144dp"
-        android:layout_toEndOf="@+id/eli2_prenom_tv" />
-
+        android:layout_marginStart="8dp" />
 </RelativeLayout>
