@@ -154,7 +154,7 @@ public class ClasseDetailActivity extends AppCompatActivity {
 
     private void initListEle() {
         RecyclerView listEle = findViewById(R.id.cd_eleves_rv);
-        eleveListAdapter2 = new EleveListAdapter2(context, dbManager.getElevesByClasseId(classeId));
+        eleveListAdapter2 = new EleveListAdapter2(dbManager.getElevesByClasseId(classeId));
         listEle.setAdapter(eleveListAdapter2);
         listEle.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
     }

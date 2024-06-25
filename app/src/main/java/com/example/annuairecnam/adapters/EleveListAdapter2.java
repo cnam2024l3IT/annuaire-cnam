@@ -19,8 +19,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class EleveListAdapter2 extends RecyclerView.Adapter<EleveListAdapter2.ViewHolder> {
-
-    private final Context context;
     private final ArrayList<Eleve> eleves;
     private final Set<Long> selectedEleveIds = new HashSet<>();
 
@@ -55,8 +53,7 @@ public class EleveListAdapter2 extends RecyclerView.Adapter<EleveListAdapter2.Vi
         }
     }
 
-    public EleveListAdapter2(Context context, ArrayList<Eleve> eleves) {
-        this.context = context;
+    public EleveListAdapter2(ArrayList<Eleve> eleves) {
         this.eleves = eleves;
     }
 
@@ -72,7 +69,6 @@ public class EleveListAdapter2 extends RecyclerView.Adapter<EleveListAdapter2.Vi
         Eleve eleve = eleves.get(position);
         holder.getIntituleTv().setText(eleve.getNom());
         holder.getPrenomTv().setText(eleve.getPrenom());
-
         holder.getCheckBox().setOnCheckedChangeListener(null);
         holder.getCheckBox().setChecked(selectedEleveIds.contains(eleve.get_id()));
         holder.getCheckBox().setOnCheckedChangeListener((buttonView, isChecked) -> {
