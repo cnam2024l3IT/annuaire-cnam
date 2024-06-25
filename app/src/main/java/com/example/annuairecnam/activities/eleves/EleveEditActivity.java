@@ -2,6 +2,7 @@ package com.example.annuairecnam.activities.eleves;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -60,6 +61,15 @@ public class EleveEditActivity extends AppCompatActivity {
             listRv.setAdapter(new EleveClasseListAdapter(context, eleve, dbManager.getClassesByEleveId(eleve.get_id())));
             listRv.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
         }
+
+        validerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Eleve eleve = new Eleve(nomCtrl.getText().toString(), prenomCtrl.getText().toString(),
+//                        dateNaissanceCtrl.getText().toString(), emailCtrl.getText().toString(), telephoneCtrl.getText().toString());
+                dbManager.updateEleve(eleve.get_id(), eleve);
+            }
+        });
     }
 
     @Override
